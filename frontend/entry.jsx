@@ -5,6 +5,6 @@ import ReactDOM from 'react-dom';
 
 document.addEventListener('DOMContentLoaded', () => {
   // let store;
-  // const root = document.getElementById("root");
-  // ReactDOM.render(<Root store={store} />, root);
+  const root = document.getElementById("root");
+  ReactDOM.render(<h1>Welcome to Readly</h1>, root);
 });
