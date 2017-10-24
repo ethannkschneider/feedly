@@ -7,7 +7,6 @@ const SessionErrorsReducer = (state = [], action) => {
   let newState;
   switch (action.type) {
     case RECEIVE_SESSION_ERRORS:
-      // note: concat returns a new copy instead of mutating object
       newState = state.concat(action.errors);
       return newState;
     case RECEIVE_CURRENT_USER:
