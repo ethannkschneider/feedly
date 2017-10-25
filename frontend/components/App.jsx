@@ -74,11 +74,13 @@ class App extends React.Component {
               path="/login"
               component={SessionFormContainer}
               closeModal={this.closeModal}
+              openModal={this.openModal}
             />
             <AuthRoute
               path="/signup"
               component={SessionFormContainer}
               closeModal={this.closeModal}
+              openModal={this.openModal}
             />
           </Switch>
         </Modal>
