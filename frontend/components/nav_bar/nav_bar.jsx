@@ -26,9 +26,13 @@ class NavBar extends React.Component {
     else {
       greeting = (
         <div className="nav-logged-out-greeting">
-          <h1>Welcome</h1>
-          <Link to="/signup">Sign Up</Link>
-          <Link to="/login">Login</Link>
+          <div className="welcome-greeting">
+            <h1>Welcome</h1>
+          </div>
+          <div className="signin-login-link">
+            <h3><Link to="/signup">Sign Up</Link></h3>
+            <h3><Link to="/login">Login</Link></h3>
+          </div>
         </div>
       );
     }

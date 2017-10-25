@@ -1,0 +1,43 @@
+.header-main {
+  height: 56px;
+  background-color: white;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 50px;
+}
+
+.nav-home-link h1 {
+  font-weight: bold;
+  font-size: 26px;
+}
+
+.nav-home-link {
+  display: flex;
+  align-items: center;
+}
+
+.nav-logged-out-greeting {
+  display: flex;
+  flex-direction: column;
+}
+
+.welcome-greeting {
+  text-align: center;
+}
+
+.signin-login-link {
+  display: flex;
+}
+
+.signin-login-link h3 {
+  margin: 0 10px;
+}
+
+.icon-div {
+  height: 25px;
+  width: 25px;
+  border: 1px solid black;
+  border-radius: 5px;
+  margin-left: 10px;
+}
