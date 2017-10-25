@@ -35,12 +35,7 @@ class NavBar extends React.Component {
           <div className="signin-login-link">
             <h3><Link
               onClick={this.props.openModal}
-              to="/signup">Sign Up
-            </Link></h3>
-
-            <h3><Link
-              onClick={this.props.openModal}
-              to="/login">Login
+              to="/welcome/login">Login
             </Link></h3>
           </div>
         </div>

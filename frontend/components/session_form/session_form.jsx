@@ -67,7 +67,7 @@ class SessionForm extends React.Component {
 
   nameInputs() {
     let nameInputs;
-    if (this.props.formType === 'signup') {
+    if (this.props.formType === 'welcome/signup') {
       nameInputs = (
         <div className="name-input">
           <label htmlFor="first-name">First Name</label>
@@ -95,8 +95,9 @@ class SessionForm extends React.Component {
   }
 
   header() {
+    // linkPath only necessary if want a link to opposite form
     const linkPath = (this.props.formType === 'login') ? '/signup' : '/login';
-    const header = (this.props.formType === 'login') ? 'Login' : 'Sign Up';
+    const header = (this.props.formType === 'welcome/login') ? 'Login' : 'Sign Up';
     const errors = this.props.errors.map( (error) => error.responseJSON);
       return (
         <div className="session-form-header">

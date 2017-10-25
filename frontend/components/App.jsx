@@ -1,9 +1,12 @@
 import React from 'react';
+import Modal from 'react-modal';
+
+import { Route, Switch, Link, withRouter } from 'react-router-dom';
+import { AuthRoute, ProtectedRoute } from '../util/route_util';
+
 import NavBarContainer from './nav_bar/nav_bar_container';
 import SessionFormContainer from './session_form/session_form_container';
-import { Route, Switch, Link } from 'react-router-dom';
-import { AuthRoute, ProtectedRoute } from '../util/route_util';
-import Modal from 'react-modal';
+import WelcomePage from './welcome/welcome_page';
 
 //note: basic modal logic found on www.npmjs.com/package/react-modal
 
@@ -54,6 +57,7 @@ class App extends React.Component {
 
   closeModal() {
     this.setState({ modalIsOpen: false });
+    this.props.history.goBack();
   }
 
   render() {
@@ -63,27 +67,34 @@ class App extends React.Component {
         <header >
           <NavBarContainer openModal={this.openModal}/>
         </header>
-        <Modal
-          isOpen={this.state.modalIsOpen}
-          onAfterOpen={this.afterOpenModal}
-          onRequestClose={this.closeModal}
-          style={modalStyles}
-        >
-          <Switch>
-            <AuthRoute
-              path="/login"
-              component={SessionFormContainer}
-              closeModal={this.closeModal}
-              openModal={this.openModal}
-            />
-            <AuthRoute
-              path="/signup"
-              component={SessionFormContainer}
-              closeModal={this.closeModal}
-              openModal={this.openModal}
-            />
-          </Switch>
-        </Modal>
+        <Route path="/welcome" render={(props) => {
+            return (
+              <div>
+                <WelcomePage openModal={this.openModal} />
+                <Modal
+                  isOpen={this.state.modalIsOpen}
+                  onAfterOpen={this.afterOpenModal}
+                  onRequestClose={this.closeModal}
+                  style={modalStyles}
+                  >
+                  <Switch>
+                    <AuthRoute
+                      path="/welcome/login"
+                      component={SessionFormContainer}
+                      closeModal={this.closeModal}
+                      openModal={this.openModal}
+                      />
+                    <AuthRoute
+                      path="/welcome/signup"
+                      component={SessionFormContainer}
+                      closeModal={this.closeModal}
+                      openModal={this.openModal}
+                      />
+                  </Switch>
+                </Modal>
+              </div>
+            );
+          }}/>
 
         <section className="section-main">
 
@@ -93,4 +104,4 @@ class App extends React.Component {
   }
 }
 
-export default App;
+export default withRouter(App);
