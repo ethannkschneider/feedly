@@ -23,6 +23,8 @@ class User < ApplicationRecord
 
   after_initialize :ensure_session_token
 
+  has_many :collections
+
   attr_reader :password
 
   def self.generate_session_token
