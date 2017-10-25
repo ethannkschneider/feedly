@@ -9,7 +9,6 @@ const mapStateToProps = (state) => {
 };
 
 const mapDispatchToProps = (dispatch, ownProps) => {
-  debugger
   return {
     logout: () => dispatch(logout()),
     openModal: () => ownProps.openModal()
