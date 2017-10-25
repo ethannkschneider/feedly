@@ -15,5 +15,99 @@
  */
 
 #root {
-  background-color: #5EFF33;
+
+}
+
+body {
+  font-family: sans-serif;
+}
+
+.header-main {
+  height: 56px;
+  background-color: white;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 50px;
+}
+
+.nav-home-link h1 {
+  font-weight: bold;
+  font-size: 26px;
+}
+
+.nav-home-link {
+  display: flex;
+}
+
+.icon-div {
+  height: 25px;
+  width: 25px;
+  border: 1px solid black;
+  border-radius: 5px;
+  margin-left: 10px;
+}
+
+.section-main {
+  background-color: whitesmoke;
+}
+
+.session-form form {
+  display: flex;
+  justify-content: center;
+  min-height: 1440px;
+}
+
+input[type=text], input[type=password] {
+    height: 32px;
+    width: 192px;
+    margin: 8px 8px;
+    border: 1px solid gray;
+    box-sizing: border-box;
+    border-radius: 0.25rem;
+    box-shadow: 0 0 0 0 transparent inset;
+    color: #333333;
+    line-height: normal;
+    vertical-align: top;
+    font: inherit;
+    padding-left: 2rem;
+    text-align: start;
+    padding: 8px 40px 8px 32px;
+}
+
+button {
+  color: #757575;
+  border: 1px solid rgba(0, 0, 0, 0.15);
+  background-color: transparent;
+  font-weight: 700;
+  text-transform: uppercase;
+  font-size: 12px;
+  line-height: 1rem;
+  padding-left: 17px;
+  padding-right: 17px;
+  border-radius: 4px;
+  cursor: pointer;
+  text-align: center;
+  vertical-align: top;
+  min-width: 50px;
+  text-decoration: none;
+  box-sizing: border-box;
+  letter-spacing: 0;
+  box-shadow: none;
+  outline: 0;
+  height: 32px;
+  align-self: center;
+}
+
+.session-form form label, .session-form form input {
+  display: block;
+}
+
+.session-form-submit-button {
+  position: relative;
+}
+
+.session-form-submit-button button {
+  position: absolute;
+  top: 58px;
 }
