@@ -1,0 +1,18 @@
+.session-form form {
+  display: flex;
+  justify-content: center;
+  min-height: 1440px;
+}
+
+.session-form form label, .session-form form input {
+  display: block;
+}
+
+.session-form-submit-button {
+  position: relative;
+}
+
+.session-form-submit-button button {
+  position: absolute;
+  top: 58px;
+}

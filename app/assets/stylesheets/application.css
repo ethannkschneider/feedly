@@ -14,9 +14,6 @@
  *= require_self
  */
 
-#root {
-
-}
 
 body {
   font-family: sans-serif;
@@ -24,12 +21,6 @@ body {
 
 .section-main {
   background-color: whitesmoke;
-}
-
-.session-form form {
-  display: flex;
-  justify-content: center;
-  min-height: 1440px;
 }
 
 input[type=text], input[type=password] {
@@ -71,17 +62,4 @@ button {
   outline: 0;
   height: 32px;
   align-self: center;
-}
-
-.session-form form label, .session-form form input {
-  display: block;
-}
-
-.session-form-submit-button {
-  position: relative;
-}
-
-.session-form-submit-button button {
-  position: absolute;
-  top: 58px;
 }
