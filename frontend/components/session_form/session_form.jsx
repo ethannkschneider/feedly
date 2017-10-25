@@ -29,6 +29,22 @@ class SessionForm extends React.Component {
   }
 
   componentWillReceiveProps(nextProps) {
+    if (nextProps.formType !== this.props.formType) {
+      this.props.clearErrors();
+      if (nextProps.formType === 'login') {
+        this.setState({
+          email: "",
+          password: "",
+          first_name: "",
+          last_name: ""
+        });
+      } else {
+        this.setState({
+          email: "",
+          password: ""
+        });
+      }
+    }
     if (nextProps.loggedIn) {
       this.props.history.push('/');
     }
@@ -43,7 +59,10 @@ class SessionForm extends React.Component {
   handleSubmit(e) {
     e.preventDefault();
     const user = merge({}, this.state);
-    this.props.processForm(user);
+    this.props.processForm(user).then( (res) => {
+      this.props.closeModal();
+      this.props.history.push("/");
+    });
   }
 
   nameInputs() {
@@ -82,7 +101,7 @@ class SessionForm extends React.Component {
       return (
         <div className="session-form-header">
           <h1>{header}</h1>
-          <div>
+          <div className="session-errors">
             <h6>{errors}</h6>
           </div>
         </div>
@@ -90,7 +109,6 @@ class SessionForm extends React.Component {
   }
 
   render() {
-
     return (
       <div className="session-form">
         {this.header()}
@@ -114,10 +132,11 @@ class SessionForm extends React.Component {
           </div>
 
           {this.nameInputs()}
-          <div className="session-form-submit-button">
-            <button>Submit</button>
-          </div>
+          <input className="hidden-submit" type="submit"></input>
         </form>
+        <div className="session-form-submit-button">
+          <button onClick={this.handleSubmit}>Submit</button>
+        </div>
       </div>
     );
   }

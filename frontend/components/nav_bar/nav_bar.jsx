@@ -16,7 +16,9 @@ class NavBar extends React.Component {
     if (this.props.currentUser) {
       greeting = (
         <div className="nav-logged-in-greeting">
-          <h1>Hello, {this.props.currentUser.first_name}</h1>
+          <div className="welcome-greeting">
+            <h1>Hello, {this.props.currentUser.first_name}</h1>
+          </div>
           <form onSubmit={this.handleSubmit}>
             <button>Logout</button>
           </form>
@@ -29,9 +31,17 @@ class NavBar extends React.Component {
           <div className="welcome-greeting">
             <h1>Welcome</h1>
           </div>
+
           <div className="signin-login-link">
-            <h3><Link to="/signup">Sign Up</Link></h3>
-            <h3><Link to="/login">Login</Link></h3>
+            <h3><Link
+              onClick={this.props.openModal}
+              to="/signup">Sign Up
+            </Link></h3>
+
+            <h3><Link
+              onClick={this.props.openModal}
+              to="/login">Login
+            </Link></h3>
           </div>
         </div>
       );

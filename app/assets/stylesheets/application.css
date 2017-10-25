@@ -17,6 +17,7 @@
 
 body {
   font-family: sans-serif;
+  position: relative;
 }
 
 .section-main {

@@ -5,11 +5,13 @@
   justify-content: space-between;
   align-items: center;
   padding: 0 50px;
+  border-bottom: 1px solid lightgray;
 }
 
 .nav-home-link h1 {
   font-weight: bold;
   font-size: 26px;
+  color: gray;
 }
 
 .nav-home-link {
@@ -17,13 +19,15 @@
   align-items: center;
 }
 
-.nav-logged-out-greeting {
+.nav-logged-out-greeting, .nav-logged-in-greeting {
   display: flex;
-  flex-direction: column;
+  align-items: center;
 }
 
 .welcome-greeting {
   text-align: center;
+  color: gray;
+  padding-right: 10px;
 }
 
 .signin-login-link {
@@ -31,13 +35,25 @@
 }
 
 .signin-login-link h3 {
+  font-weight: 700;
+  color: gray;
   margin: 0 10px;
+  font-size: 12px;
+  line-height: 1rem;
+  text-transform: uppercase;
+  padding: 5px 15px;
+  border: 1px solid lightgray;
+  border-radius: 5px;
 }
 
 .icon-div {
   height: 25px;
   width: 25px;
-  border: 1px solid black;
-  border-radius: 5px;
+  /*border: 1px solid black;
+  border-radius: 5px;*/
   margin-left: 10px;
+}
+
+.icon-div i {
+  color: gray;
 }
