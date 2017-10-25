@@ -82,8 +82,9 @@ class SessionForm extends React.Component {
       return (
         <div className="session-form-header">
           <h1>{header}</h1>
-          <Link to={linkPath}>{linkPath.slice(1)}</Link>
-          <h6>{errors}</h6>
+          <div>
+            <h6>{errors}</h6>
+          </div>
         </div>
       );
   }

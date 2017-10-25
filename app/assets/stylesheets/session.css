@@ -1,3 +1,18 @@
+
+.session-form-header {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.session-form-header h1 {
+  padding: 20px 20px;
+  text-transform: uppercase;
+  font-size: 26px;
+  font-weight: bold;
+}
+
 .session-form form {
   display: flex;
   justify-content: center;
