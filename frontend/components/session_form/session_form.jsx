@@ -60,7 +60,7 @@ class SessionForm extends React.Component {
     e.preventDefault();
     const user = merge({}, this.state);
     this.props.processForm(user).then( (res) => {
-      this.props.closeModal();
+      this.props.hideModals();
       this.props.history.push("/");
     });
   }

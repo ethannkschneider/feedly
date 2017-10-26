@@ -1,6 +1,7 @@
 import { connect } from 'react-redux';
 import { logout } from './../../actions/session_actions';
 import NavBar from './nav_bar';
+import { showLoginModal, hideModals } from '../../actions/modal_actions';
 
 const mapStateToProps = (state) => {
   return {
@@ -8,10 +9,11 @@ const mapStateToProps = (state) => {
   };
 };
 
-const mapDispatchToProps = (dispatch, ownProps) => {
+const mapDispatchToProps = (dispatch) => {
   return {
     logout: () => dispatch(logout()),
-    openModal: () => ownProps.openModal()
+    showLoginModal: () => dispatch(showLoginModal()),
+    hideModals: () => dispatch(hideModals())
   };
 };
 

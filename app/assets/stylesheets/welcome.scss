@@ -1,0 +1,57 @@
+.welcome-main {
+  height: 1400px;
+  margin: 0 auto;
+  background: #e3e4e5;
+}
+
+.welcome-container {
+  margin: 0 auto;
+  width: 70%;
+}
+
+.welcome-header h1 {
+  font-size: 39px;
+  font-weight: bold;
+  line-height: 1.2em;
+  text-align: left;
+  color: #333333;
+  padding: 60px 0 20px 0;
+}
+
+.welcome-description {
+  color: rgb(117, 117, 117);
+  display: block;
+  box-sizing: border-box;
+  line-height: 1.5;
+  max-width: 500px;
+  font-weight: normal;
+  text-align: left;
+  margin-top: 20px;
+  margin-bottom: 40px;
+  font-size: 20px;
+  letter-spacing: normal;
+  text-rendering: optimizeLegibility;
+}
+
+.welcome-signup {
+  background-color: rgb(43, 178, 76);
+  cursor: pointer;
+  border-radius: 4px;
+  color: white;
+  line-height: 28px;
+  min-width: 240px;
+  display: inline-block;
+  text-align: center;
+  font-weight: normal;
+}
+
+.welcome-signup a {
+  height: 100%;
+  width: 100%;
+  padding: 12px 0 12px 0;
+  box-sizing: border-box;
+  font-weight: normal;
+  display: block;
+  text-transform: uppercase;
+  font-size: 13px;
+}

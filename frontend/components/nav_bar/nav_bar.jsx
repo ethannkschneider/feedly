@@ -1,14 +1,20 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+import { Link, withRouter } from 'react-router-dom';
 
 class NavBar extends React.Component {
   constructor(props) {
     super(props);
-    this.handleSubmit = this.handleSubmit.bind(this);
+    this.handleLogout = this.handleLogout.bind(this);
+    this.handleLogin = this.handleLogin.bind(this);
   }
 
-  handleSubmit() {
+  handleLogout() {
     this.props.logout();
+  }
+
+  handleLogin() {
+    this.props.showLoginModal();
+    this.props.history.push("/welcome/login");
   }
 
   render() {
@@ -19,7 +25,7 @@ class NavBar extends React.Component {
           <div className="welcome-greeting">
             <h1>Hello, {this.props.currentUser.first_name}</h1>
           </div>
-          <form onSubmit={this.handleSubmit}>
+          <form onSubmit={this.handleLogout}>
             <button>Logout</button>
           </form>
         </div>
@@ -33,10 +39,9 @@ class NavBar extends React.Component {
           </div>
 
           <div className="signin-login-link">
-            <h3><Link
-              onClick={this.props.openModal}
-              to="/welcome/login">Login
-            </Link></h3>
+            <form onSubmit={this.handleLogin}>
+              <button>Login</button>
+            </form>
           </div>
         </div>
       );
@@ -56,4 +61,4 @@ class NavBar extends React.Component {
   }
 }
 
-export default NavBar;
+export default withRouter(NavBar);
