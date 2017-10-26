@@ -4,13 +4,14 @@ import {
   requestCollections, requestCollection,
   createCollection, deleteCollection,
   receiveErrors, clearErrors } from '../../actions/collection_actions';
+import { turnOffLoading, turnOnLoading } from '../../actions/ui_actions';
 
 const mapStateToProps = (state) => {
-  debugger
   return {
     collections: Object.keys(state.entities.collections).map( (id) => {
       return state.entities.collections[id];
     }),
+    loading: state.ui.collectionsIndex
   };
 };
 
@@ -21,7 +22,10 @@ const mapDispatchToProps = (dispatch) => {
     createCollection: (collection) => dispatch(createCollection(collection)),
     deleteCollection: (collectionId) => dispatch(deleteCollection(collectionId)),
     receiveErrors: (errors) => dispatch(receiveErrors(errors)),
-    clearErrors: () => dispatch(clearErrors())
+    clearErrors: () => dispatch(clearErrors()),
+    turnOffLoading: () => dispatch(turnOffLoading('collectionsIndex')),
+    turnOnLoading: () => dispatch(turnOnLoading('collectionsIndex'))
+
   };
 };
 

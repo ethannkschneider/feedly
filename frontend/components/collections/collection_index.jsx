@@ -1,5 +1,6 @@
 import React from "react";
 import CollectionIndexItem from './collection_index_item';
+import LoadingSpinner from '../loading_spinner';
 
 class CollectionIndex extends React.Component {
 
@@ -10,14 +11,14 @@ class CollectionIndex extends React.Component {
   }
 
   componentDidMount() {
-    debugger
-    this.props.requestCollections();
+    this.props.turnOnLoading();
+    this.props.requestCollections()
+      .then( (res) => this.props.turnOffLoading());
   }
 
   renderCollectionItems() {
-    debugger
     let collectionItems = null;
-    if (this.props.collections) {
+    if (!this.props.loading) {
       collectionItems = this.props.collections.map( (collection) => {
         return (
           <CollectionIndexItem key={collection.id} collection={collection} />
@@ -31,10 +32,17 @@ class CollectionIndex extends React.Component {
     let collectionItems = this.renderCollectionItems();
     return (
       <div className="collection-index">
-        <h1>Today</h1>
-        <ul>
-          {collectionItems}
-        </ul>
+        {this.props.loading ?
+          <div>
+            <LoadingSpinner />
+          </div> :
+          <div className="collection-index-loaded">
+            <h1>Today</h1>
+            <ul>
+              {collectionItems}
+            </ul>
+          </div>
+        }
       </div>
     );
   }
