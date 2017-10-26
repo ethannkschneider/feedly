@@ -1,14 +1,15 @@
 import { connect } from 'react-redux';
-import CollectionsIndex from './collections_index';
+import CollectionIndex from './collection_index';
 import {
   requestCollections, requestCollection,
   createCollection, deleteCollection,
   receiveErrors, clearErrors } from '../../actions/collection_actions';
 
 const mapStateToProps = (state) => {
+  debugger
   return {
     collections: Object.keys(state.entities.collections).map( (id) => {
-      return state.entities[id];
+      return state.entities.collections[id];
     }),
   };
 };
@@ -24,4 +25,4 @@ const mapDispatchToProps = (dispatch) => {
   };
 };
 
-export default connect(mapStateToProps, mapDispatchToProps)(CollectionsIndex);
+export default connect(mapStateToProps, mapDispatchToProps)(CollectionIndex);

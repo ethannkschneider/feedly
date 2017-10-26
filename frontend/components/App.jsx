@@ -5,9 +5,8 @@ import { Route, Switch, Link, withRouter } from 'react-router-dom';
 import { AuthRoute, ProtectedRoute } from '../util/route_util';
 
 import NavBarContainer from './nav_bar/nav_bar_container';
-import SessionFormContainer from './session_form/session_form_container';
 import WelcomePageContainer from './welcome/welcome_page_container';
-import CollectionsIndex from './collections/collections_index';
+import CollectionIndexContainer from './collections/collection_index_container';
 
 class App extends React.Component {
   constructor() {
@@ -29,7 +28,7 @@ class App extends React.Component {
 
           <ProtectedRoute
             path="/"
-            component={CollectionsIndex}
+            component={CollectionIndexContainer}
           />
         </Switch>
 

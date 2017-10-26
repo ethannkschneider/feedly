@@ -1,4 +1,4 @@
-import * as CollectionApiUtil from './util/collection_api_util';
+import * as CollectionApiUtil from '../util/collection_api_util';
 
 export const RECEIVE_COLLECTIONS = "RECEIVE_COLLECTIONS";
 export const RECEIVE_COLLECTION = "RECEIVE_COLLECTION";
