@@ -59,13 +59,14 @@ class WelcomePage extends React.Component {
   render() {
     return (
       <main className="welcome-main">
-        <div className="welcome-container">
+        <div className="welcome-intro-container">
           <div className="welcome-header">
             <h1>Welcome to Readly</h1>
           </div>
           <div className="welcome-description">
             <p>
-              The content you need to keep yourself occupied on the subway and other places.
+              The content you need to keep yourself occupied on the subway
+               and other places.
             </p>
           </div>
 
@@ -99,6 +100,75 @@ class WelcomePage extends React.Component {
 
           <div id="color-feed-image"></div>
         </div>
+
+        <section class="welcome-section white-section">
+          <div className="centered"><h4>You are in control</h4></div>
+          <div className="centered"><h2>More signal, less noise</h2></div>
+          <div class="signal-noise-grid">
+            <div className="grid-el row-1-col-1">
+              <div className="icon feature-pubs">
+                <i class="material-icons">add</i>
+              </div>
+              <div className="item-header">Your Publication</div>
+              <div className="description">
+                NYTimes? Check. Other publications? Also check.
+                We have all the publications you need to completely
+                recede into yourself during your morning commute.
+              </div>
+            </div>
+            <div className="grid-el row-1-col-2">
+              <div className="icon feature-blogs">
+                <i class="material-icons">nature_people</i>
+              </div>
+              <div className="item-header">Your Blogs</div>
+              <div className="description">
+                Fade into oblivion by following blogs from all of hottest
+                thinkfluencers on the web.
+              </div>
+            </div>
+            <div className="grid-el row-1-col-3">
+              <div className="icon feature-youtube">
+                <i class="material-icons">video_label</i>
+              </div>
+              <div className="item-header">Your YouTube Channels</div>
+              <div className="description">
+                Who knows? Someday you may be able to check out all of your
+                favorite YouTube videos on Readly. Maybe.
+              </div>
+            </div>
+            <div className="grid-el row-2-col-1">
+              <div className="icon feature-keyword">
+                <i class="material-icons">notifications</i>
+              </div>
+              <div className="item-header">Your Keyword Alerts</div>
+              <div className="description">
+                Wouldn't it be nice to be able to integrate Google Alerts
+                into your Readly experience? Shhh go back to reading Readly.
+              </div>
+            </div>
+            <div className="grid-el row-2-col-2">
+              <div className="icon feature-collections">
+                <i class="material-icons">dashboard</i>
+              </div>
+              <div className="item-header">Your Collections</div>
+              <div className="description">
+                Scrunch through more content all the time everyday by
+                organizing your feeds into easy-to-read collections.
+              </div>
+            </div>
+            <div className="grid-el row-2-col-3">
+              <div className="icon feature-security">
+                <i class="material-icons">https</i>
+              </div>
+              <div className="item-header">Your Privacy</div>
+              <div className="description">
+                Your security matters, which is why Readly is commited to
+                implementing a hella sweet backend-to-frontend
+                authentication pattern.
+              </div>
+            </div>
+          </div>
+        </section>
       </main>
     );
   }

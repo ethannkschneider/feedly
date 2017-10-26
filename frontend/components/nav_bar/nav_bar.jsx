@@ -49,13 +49,15 @@ class NavBar extends React.Component {
 
     return (
       <div className="header-main">
-        <div className="nav-home-link">
-          <h1><Link to="/">Readly</Link></h1>
-          <div className="icon-div">
-            <Link to="/"><i className="material-icons">rss_feed</i></Link>
+        <div className="header-nav-items">
+          <div className="nav-home-link">
+            <h1><Link to="/">Readly</Link></h1>
+            <div className="icon-div">
+              <Link to="/"><i className="material-icons">rss_feed</i></Link>
+            </div>
           </div>
+          {greeting}
         </div>
-        {greeting}
       </div>
     );
   }
