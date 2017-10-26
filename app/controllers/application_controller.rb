@@ -22,8 +22,9 @@ class ApplicationController < ActionController::Base
     !!current_user
   end
 
-  # use for future controllers?
-  def redirect_unless_logged_in
-
+  def require_logged_in
+    unless logged_in?
+      render json: ["No one is logged in"], status: 401
+    end
   end
 end

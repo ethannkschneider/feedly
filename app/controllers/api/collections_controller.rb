@@ -1,9 +1,10 @@
 # Note: some of these actions may be unnecessary once I start fetching more data immediately upon login!
 
-class CollectionsController < ApplicationController
+class Api::CollectionsController < ApplicationController
+  before_action :require_logged_in
 
   def index
-    @collection = current_user.collections
+    @collections = current_user.collections
     render :index
   end
 
@@ -14,9 +15,8 @@ class CollectionsController < ApplicationController
 
   def create
     @collection = current_user.collections.new(collection_params)
-
     if @collection.save
-      render :index
+      render :show
     else
       render json: @collection.errors.full_messages, status: 422
     end
@@ -26,7 +26,8 @@ class CollectionsController < ApplicationController
     @collection = current_user.collections.find(params[:id])
 
     if @collection && @collection.destroy
-      render :index
+      @collections = current_user.collections
+      render :show
     else
       render json: ["Collection could not be destroyed!"], status: 404
     end
@@ -45,6 +46,6 @@ class CollectionsController < ApplicationController
   private
 
   def collection_params
-    params.require(:current_user).permit(:name)
+    params.require(:collection).permit(:name)
   end
 end

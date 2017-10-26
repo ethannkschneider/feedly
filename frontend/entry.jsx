@@ -5,6 +5,9 @@ import configureStore from './store/store';
 
 // START TEST //
 import { login, logout, signup } from './util/session_api_util';
+import {
+  fetchCollections, fetchCollection,
+  createCollection, deleteCollection } from './util/collection_api_util';
 // END TEST //
 document.addEventListener('DOMContentLoaded', () => {
   let store;
@@ -20,6 +23,10 @@ document.addEventListener('DOMContentLoaded', () => {
   window.login = login;
   window.logout = logout;
   window.signup = signup;
+  window.fetchCollections = fetchCollections;
+  window.fetchCollection = fetchCollection;
+  window.createCollection = createCollection;
+  window.deleteCollection = deleteCollection;
   window.getState = store.getState;
   window.dispatch = store.dispatch;
   // END TEST //

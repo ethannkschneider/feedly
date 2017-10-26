@@ -1,1 +1,1 @@
-json.partial! 'api/collections/collection', collection: @collection
+json.partial! 'api/collections/collection', colleccion: @collection
