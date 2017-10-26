@@ -96,15 +96,23 @@ class SessionForm extends React.Component {
 
   header() {
     // linkPath only necessary if want a link to opposite form
+    let errors;
     const linkPath = (this.props.formType === 'login') ? '/signup' : '/login';
-    const header = (this.props.formType === 'welcome/login') ? 'Login' : 'Sign Up';
-    const errors = this.props.errors.map( (error) => error.responseJSON);
+    const header = (this.props.formType === 'welcome/login') ?
+     'Login' : 'Sign Up';
+    if (this.props.errors.responseJSON) {
+      errors = this.props.errors.responseJSON.map( (error, idx) => {
+        return (
+          <li key={idx}>{error}</li>
+        );}
+      );
+    }
       return (
         <div className="session-form-header">
           <h1>{header}</h1>
-          <div className="session-errors">
-            <h6>{errors}</h6>
-          </div>
+          <ul className="session-errors">
+            {errors}
+          </ul>
         </div>
       );
   }

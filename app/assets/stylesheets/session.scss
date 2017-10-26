@@ -53,6 +53,13 @@
 
 }
 
-.session-errors h6 {
+.session-errors ul {
+  list-style: none;
+  padding: 10px 0;
+}
+.session-errors li {
+  padding: 5px 0;
   color: red;
+  font-size: 10px;
+  text-align: center;
 }
