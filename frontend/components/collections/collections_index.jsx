@@ -1,10 +1,17 @@
 import React from "react";
 
-const CollectionsIndex = (props) => {
+class CollectionsIndex extends React.Component {
 
-  return (
-    <h1>Collections Index Page</h1>
-  );
-};
+  constructor(props) {
+    super(props);
+  }
 
+  componentDidMount() {
+    
+  }
+
+  render() {
+
+  }
+}
 export default CollectionsIndex;
