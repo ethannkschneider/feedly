@@ -28,7 +28,7 @@ class CollectionsController < ApplicationController
     if @collection && @collection.destroy
       render :index
     else
-      render json: ["Collection could not be destroyed!"]
+      render json: ["Collection could not be destroyed!"], status: 404
     end
   end
 
