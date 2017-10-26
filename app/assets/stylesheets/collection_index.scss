@@ -1,0 +1,47 @@
+.collection-index {
+  background: #FCF5F5;
+  height: auto;
+  margin: 0 auto;
+  position: absolute;
+  top: 57px;
+  left: 0;
+  right: 0;
+  bottom: 0;
+}
+
+.collection-index-loaded {
+  background: #FCF5F5;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  width: 100%;
+  padding: 20px;
+  box-sizing: border-box;
+
+}
+
+.today-header {
+  padding: 20px;
+  color: #333333;
+  font-size: 26px;
+  line-height: 40px;
+  font-weight: bold;
+  text-align: left;
+}
+
+.collection-index-item {
+  width: 100%;
+  padding: 20px;
+}
+
+.collection-name {
+  color: rgb(117, 117, 117);
+  font-size: 0.75rem;
+  line-height: 1em;
+  text-transform: uppercase;
+}
+
+.bold {
+  font-weight: bold;
+}

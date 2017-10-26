@@ -9,12 +9,14 @@ class CollectionIndexItem extends React.Component {
   render() {
     //Here we will render our articles! (later)
     return (
-      <li>
-        <h2>New in {this.props.collection.name}</h2>
+      <div className="collection-index-item">
+        <div className="collection-name">
+          New in <span className="bold">{this.props.collection.name}</span>
+        </div>
         <h3>Article One</h3>
         <h3>Article Two</h3>
         <h3>Article Three</h3>
-      </li>
+      </div>
     );
   }
 }
