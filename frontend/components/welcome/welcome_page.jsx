@@ -27,7 +27,7 @@ const modalStyles = {
     background: '#FAEBD7',
     border: '1px solid black',
     padding: '2px',
-    opacity: 0.7
+    opacity: 0.9
 
   }
 };
