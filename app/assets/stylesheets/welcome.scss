@@ -8,6 +8,9 @@
 .white-section {
   background-color: white;
 }
+.gray-section {
+  background: #e3e4e5;
+}
 
 .welcome-intro-container {
   margin: 0 auto;
@@ -137,6 +140,7 @@
 
 .signal-noise-grid .grid-el {
   padding: 20px;
+  min-width: 158px;
 }
 
 .signal-noise-grid .icon {

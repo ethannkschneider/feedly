@@ -169,6 +169,69 @@ class WelcomePage extends React.Component {
             </div>
           </div>
         </section>
+
+        <section class="welcome-section gray-section">
+          <div className="centered"><h4>Powerful Integrations</h4></div>
+          <div className="centered"><h2>Infinite content</h2></div>
+          <div class="signal-noise-grid">
+            <div className="grid-el row-1-col-1">
+              <div className="icon feature-pubs">
+                <i class="material-icons">view_comfy</i>
+              </div>
+              <div className="item-header">Organize</div>
+              <div className="description">
+                Organize your stuff. 
+              </div>
+            </div>
+            <div className="grid-el row-1-col-2">
+              <div className="icon feature-blogs">
+                <i class="material-icons">storage</i>
+              </div>
+              <div className="item-header">Read</div>
+              <div className="description">
+                Readly offers you things to read. Read them.
+              </div>
+            </div>
+            <div className="grid-el row-1-col-3">
+              <div className="icon feature-youtube">
+                <i class="material-icons">search</i>
+              </div>
+              <div className="item-header">Search</div>
+              <div className="description">
+                Check out our sweet search feature.
+              </div>
+            </div>
+            <div className="grid-el row-2-col-1">
+              <div className="icon feature-keyword">
+                <i class="material-icons">bookmark_border</i>
+              </div>
+              <div className="item-header">Read Later</div>
+              <div className="description">
+                Can you save articles to read later, you ask? Yes.
+              </div>
+            </div>
+            <div className="grid-el row-2-col-2">
+              <div className="icon feature-collections">
+                <i class="material-icons">share</i>
+              </div>
+              <div className="item-header">Share</div>
+              <div className="description">
+                It would be pretty nifty if you could share articles to
+                your favorite social media sites, right? Shhh go back to
+                reading those articles.
+              </div>
+            </div>
+            <div className="grid-el row-2-col-3">
+              <div className="icon feature-security">
+                <i class="material-icons">track_changes</i>
+              </div>
+              <div className="item-header">Discover</div>
+              <div className="description">
+                Find all that fresh new content.
+              </div>
+            </div>
+          </div>
+        </section>
       </main>
     );
   }
