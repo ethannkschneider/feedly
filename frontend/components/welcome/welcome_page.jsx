@@ -53,6 +53,7 @@ class WelcomePage extends React.Component {
 
   closeModal() {
     this.props.hideModals();
+    this.props.clearErrors();
     this.props.history.goBack();
   }
 
@@ -101,13 +102,13 @@ class WelcomePage extends React.Component {
           <div id="color-feed-image"></div>
         </div>
 
-        <section class="welcome-section white-section">
+        <section className="welcome-section white-section">
           <div className="centered"><h4>You are in control</h4></div>
           <div className="centered"><h2>More signal, less noise</h2></div>
-          <div class="signal-noise-grid">
+          <div className="signal-noise-grid">
             <div className="grid-el row-1-col-1">
               <div className="icon feature-pubs">
-                <i class="material-icons">add</i>
+                <i className="material-icons">add</i>
               </div>
               <div className="item-header">Your Publication</div>
               <div className="description">
@@ -118,7 +119,7 @@ class WelcomePage extends React.Component {
             </div>
             <div className="grid-el row-1-col-2">
               <div className="icon feature-blogs">
-                <i class="material-icons">nature_people</i>
+                <i className="material-icons">nature_people</i>
               </div>
               <div className="item-header">Your Blogs</div>
               <div className="description">
@@ -128,7 +129,7 @@ class WelcomePage extends React.Component {
             </div>
             <div className="grid-el row-1-col-3">
               <div className="icon feature-youtube">
-                <i class="material-icons">video_label</i>
+                <i className="material-icons">video_label</i>
               </div>
               <div className="item-header">Your YouTube Channels</div>
               <div className="description">
@@ -138,7 +139,7 @@ class WelcomePage extends React.Component {
             </div>
             <div className="grid-el row-2-col-1">
               <div className="icon feature-keyword">
-                <i class="material-icons">notifications</i>
+                <i className="material-icons">notifications</i>
               </div>
               <div className="item-header">Your Keyword Alerts</div>
               <div className="description">
@@ -148,7 +149,7 @@ class WelcomePage extends React.Component {
             </div>
             <div className="grid-el row-2-col-2">
               <div className="icon feature-collections">
-                <i class="material-icons">dashboard</i>
+                <i className="material-icons">dashboard</i>
               </div>
               <div className="item-header">Your Collections</div>
               <div className="description">
@@ -158,7 +159,7 @@ class WelcomePage extends React.Component {
             </div>
             <div className="grid-el row-2-col-3">
               <div className="icon feature-security">
-                <i class="material-icons">https</i>
+                <i className="material-icons">https</i>
               </div>
               <div className="item-header">Your Privacy</div>
               <div className="description">
@@ -170,22 +171,22 @@ class WelcomePage extends React.Component {
           </div>
         </section>
 
-        <section class="welcome-section gray-section">
+        <section className="welcome-section gray-section">
           <div className="centered"><h4>Powerful Integrations</h4></div>
           <div className="centered"><h2>Infinite content</h2></div>
-          <div class="signal-noise-grid">
+          <div className="signal-noise-grid">
             <div className="grid-el row-1-col-1">
               <div className="icon feature-pubs">
-                <i class="material-icons">view_comfy</i>
+                <i className="material-icons">view_comfy</i>
               </div>
               <div className="item-header">Organize</div>
               <div className="description">
-                Organize your stuff. 
+                Organize your stuff.
               </div>
             </div>
             <div className="grid-el row-1-col-2">
               <div className="icon feature-blogs">
-                <i class="material-icons">storage</i>
+                <i className="material-icons">storage</i>
               </div>
               <div className="item-header">Read</div>
               <div className="description">
@@ -194,7 +195,7 @@ class WelcomePage extends React.Component {
             </div>
             <div className="grid-el row-1-col-3">
               <div className="icon feature-youtube">
-                <i class="material-icons">search</i>
+                <i className="material-icons">search</i>
               </div>
               <div className="item-header">Search</div>
               <div className="description">
@@ -203,7 +204,7 @@ class WelcomePage extends React.Component {
             </div>
             <div className="grid-el row-2-col-1">
               <div className="icon feature-keyword">
-                <i class="material-icons">bookmark_border</i>
+                <i className="material-icons">bookmark_border</i>
               </div>
               <div className="item-header">Read Later</div>
               <div className="description">
@@ -212,7 +213,7 @@ class WelcomePage extends React.Component {
             </div>
             <div className="grid-el row-2-col-2">
               <div className="icon feature-collections">
-                <i class="material-icons">share</i>
+                <i className="material-icons">share</i>
               </div>
               <div className="item-header">Share</div>
               <div className="description">
@@ -223,7 +224,7 @@ class WelcomePage extends React.Component {
             </div>
             <div className="grid-el row-2-col-3">
               <div className="icon feature-security">
-                <i class="material-icons">track_changes</i>
+                <i className="material-icons">track_changes</i>
               </div>
               <div className="item-header">Discover</div>
               <div className="description">
