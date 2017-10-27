@@ -9,6 +9,7 @@
   flex-direction: column;
   align-items: center;
   justify-content: space-between;
+  opacity: 1.0;
 }
 
 .session-form-header {
@@ -33,7 +34,7 @@
 }
 
 .session-form form div {
-    height: inherit;
+  height: inherit;
 }
 
 .session-form form label, .session-form form input {

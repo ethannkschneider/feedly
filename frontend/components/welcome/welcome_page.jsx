@@ -27,8 +27,7 @@ const modalStyles = {
     background: '#FAEBD7',
     border: '1px solid black',
     padding: '2px',
-    opacity: 0.9
-
+    opacity: 0.95
   }
 };
 
@@ -41,6 +40,7 @@ class WelcomePage extends React.Component {
       this.openModal = this.openModal.bind(this);
       this.afterOpenModal = this.afterOpenModal.bind(this);
       this.closeModal = this.closeModal.bind(this);
+      this.demoLogin = this.demoLogin.bind(this);
   }
 
   openModal(modalPath) {
@@ -57,6 +57,10 @@ class WelcomePage extends React.Component {
     this.props.history.goBack();
   }
 
+  demoLogin() {
+    this.props.demoLogin();
+  }
+
   render() {
     return (
       <main className="welcome-main">
@@ -71,12 +75,21 @@ class WelcomePage extends React.Component {
             </p>
           </div>
 
-          <div className="welcome-signup">
-            <Link
-              onClick={() => this.openModal("signup")}
-              to="/welcome/signup">Get Started for Free
-            </Link>
+          <div className="signup-demo-buttons">
+            <div className="welcome-signup">
+              <Link
+                onClick={() => this.openModal("signup")}
+                to="/welcome/signup">Get Started for Free
+              </Link>
+            </div>
+            <div className="welcome-signup demo">
+              <Link
+                onClick={this.demoLogin}
+                to="/">Demo
+              </Link>
+            </div>
           </div>
+
           <Modal
             isOpen={this.props.isModalOpen}
             onAfterOpen={this.afterOpenModal}
