@@ -10,5 +10,4 @@ json.feeds do
       json.partial! 'api/feeds/feed', feed: feed
     end
   end
-  colleccion.feeds.map(&:title)
 end
