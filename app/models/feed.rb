@@ -27,4 +27,8 @@ class Feed < ApplicationRecord
     @parsed_feed || Feedjira::Feed.fetch_and_parse(self.url)
   end
 
+  def entries
+    parsed_feed.entries
+  end
+
 end
