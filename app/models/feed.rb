@@ -28,7 +28,11 @@ class Feed < ApplicationRecord
   end
 
   def entries
-    parsed_feed.entries
+    parsed_feed.entries || "No entries in #{self.title}"
+  end
+
+  def title
+    parsed_feed.title || self.title
   end
 
 end

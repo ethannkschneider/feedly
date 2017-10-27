@@ -16,4 +16,7 @@ class Subscription < ApplicationRecord
   belongs_to :feed
   belongs_to :collection
 
+  def self.find_by_feed_and_collection(feed_id, collection_id)
+    Feed.where(feed_id: feed_id, collection_id: collection_id).first
+  end
 end

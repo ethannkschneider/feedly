@@ -9,7 +9,7 @@ class Api::CollectionsController < ApplicationController
   end
 
   def show
-    @collection = current_user.collections.find(params[:id])
+    @collection = current_user.collections.find(params[:id]).includes(:feeds)
     render :show
   end
 

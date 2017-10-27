@@ -1,4 +1,4 @@
-class SubscriptionsController < ApplicationController
+class Api::SubscriptionsController < ApplicationController
 
   def create
     @subscription = Subscription.new(subscription_params)
@@ -12,7 +12,10 @@ class SubscriptionsController < ApplicationController
   end
 
   def destroy
-    @subscription = Subscription.find(params[:id])
+    @subscription = Subscription.find_by_feed_and_collection(
+      subscription_params[:feed_id],
+      params[:id]
+    )
 
     if @subscription
       @subscription.destroy

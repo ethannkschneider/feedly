@@ -8,13 +8,20 @@ import merge from 'lodash/merge';
 const CollectionsReducer = (state = {}, action) => {
   Object.freeze(state);
   let newState;
+  let newCollection, newCollections;
   switch (action.type) {
     case RECEIVE_COLLECTIONS:
-      newState = merge({}, state, action.collections);
+      newCollections = merge({}, action.collections);
+      Object.keys(newCollections).forEach( (id) => {
+        delete newCollections.id.feeds;
+      });
+      newState = merge({}, state, newCollection);
       return newState;
     case RECEIVE_COLLECTION:
+      newCollection = merge({}, action.collection);
+      delete newCollection.feeds;
       newState = merge(
-        {}, state, { [action.collection.id]: action.collection }
+        {}, state, { [action.collection.id]: newCollection }
       );
       return newState;
     case REMOVE_COLLECTION:
