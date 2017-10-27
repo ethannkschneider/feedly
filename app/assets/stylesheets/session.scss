@@ -1,7 +1,7 @@
 .session-form {
   background: white;
-  border: 1px solid black;
-  box-shadow: 1px 5px 3px black;
+  border: 3px solid black;
+  box-shadow: 1px 2px 2px black;
   border-radius: 5px;
   height: inherit;
   width: inherit;
@@ -25,6 +25,7 @@
   text-transform: uppercase;
   font-size: 26px;
   font-weight: bold;
+  margin-bottom: 18px;
 }
 
 .session-form form {
@@ -48,12 +49,10 @@
   display: none;
 }
 .session-form-submit-button {
+  margin-top: 50px;
   height: 100px;
 }
 
-.session-form-submit-button button {
-
-}
 
 .session-errors ul {
   list-style: none;

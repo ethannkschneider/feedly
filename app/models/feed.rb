@@ -9,6 +9,8 @@
 #  updated_at :datetime         not null
 #
 
+require 'feedjira'
+
 class Feed < ApplicationRecord
   validates :title, :url, presence: true
   validates :url, uniqueness: true
