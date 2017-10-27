@@ -11,8 +11,13 @@
 
 class Collection < ApplicationRecord
   validates :name, :user, presence: true
-  
+
   belongs_to :user
 
+  has_many :subscriptions
+
+  has_many :feeds,
+    through: :subscriptions,
+    source: :feed
 
 end
