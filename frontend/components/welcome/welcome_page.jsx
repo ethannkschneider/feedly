@@ -16,7 +16,7 @@ const modalStyles = {
     height: 'auto',
     margin: '0 auto',
     padding: '10px',
-    background: 'inherit',
+    background: 'rgba(0, 0, 0, 0)',
     border: 'none'
   },
   overlay: {
@@ -24,10 +24,9 @@ const modalStyles = {
     top: 0,
     margin: '0 auto',
     overflow: 'hidden',
-    background: '#FAEBD7',
+    background: 'rgba(149, 156, 157, 0.7)',
     border: '1px solid black',
-    padding: '2px',
-    opacity: 0.95
+    padding: '2px'
   }
 };
 
