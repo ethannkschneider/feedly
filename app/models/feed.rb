@@ -24,15 +24,11 @@ class Feed < ApplicationRecord
   attr_reader :parsed_feed
 
   def parsed_feed
-    @parsed_feed || Feedjira::Feed.fetch_and_parse(self.url)
+    @parsed_feed ||= Feedjira::Feed.fetch_and_parse(self.url)
   end
 
   def entries
     parsed_feed.entries || "No entries in #{self.title}"
-  end
-
-  def title
-    parsed_feed.title || self.title
   end
 
 end

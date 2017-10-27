@@ -13,9 +13,9 @@ const CollectionsReducer = (state = {}, action) => {
     case RECEIVE_COLLECTIONS:
       newCollections = merge({}, action.collections);
       Object.keys(newCollections).forEach( (id) => {
-        delete newCollections.id.feeds;
+        delete newCollections[id].feeds;
       });
-      newState = merge({}, state, newCollection);
+      newState = merge({}, state, newCollections);
       return newState;
     case RECEIVE_COLLECTION:
       newCollection = merge({}, action.collection);

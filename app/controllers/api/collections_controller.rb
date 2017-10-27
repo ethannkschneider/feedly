@@ -4,7 +4,7 @@ class Api::CollectionsController < ApplicationController
   before_action :require_logged_in
 
   def index
-    @collections = current_user.collections
+    @collections = current_user.collections.includes(:feeds)
     render :index
   end
 

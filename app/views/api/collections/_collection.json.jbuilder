@@ -1,7 +1,7 @@
 json.extract! colleccion, :id, :name
 
 json.feedIds do
-  colleccion.feeds.map(&:id)
+  json.array! colleccion.feeds.map(&:id)
 end
 
 json.feeds do
