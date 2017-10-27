@@ -21,5 +21,10 @@ class Feed < ApplicationRecord
     through: :subscriptions,
     source: :collection
 
+  attr_reader :parsed_feed
+
+  def parsed_feed
+    @parsed_feed || Feedjira::Feed.fetch_and_parse(self.url)
+  end
 
 end
