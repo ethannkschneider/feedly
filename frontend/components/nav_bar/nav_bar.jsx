@@ -6,6 +6,7 @@ class NavBar extends React.Component {
     super(props);
     this.handleLogout = this.handleLogout.bind(this);
     this.handleLogin = this.handleLogin.bind(this);
+    this.cssHeaderClass = this.cssHeaderClass.bind(this);
   }
 
   handleLogout() {
@@ -15,6 +16,16 @@ class NavBar extends React.Component {
   handleLogin() {
     this.props.showLoginModal();
     this.props.history.push("/welcome/login");
+  }
+
+  cssHeaderClass() {
+    if (!this.props.currentUser) {
+      return "header-main header-logged-out";
+    } else if (this.props.sidebarVisible) {
+      return "header-main header-sidebar-open";
+    } else {
+      return "header-main header-sidebar-closed";
+    }
   }
 
   render() {
@@ -48,7 +59,7 @@ class NavBar extends React.Component {
     }
 
     return (
-      <div className="header-main">
+      <div className={this.cssHeaderClass()}>
         <div className="header-nav-items">
           <div className="nav-home-link">
             <h1><Link to="/">Readly</Link></h1>
@@ -56,7 +67,7 @@ class NavBar extends React.Component {
               <Link to="/"><i className="material-icons">rss_feed</i></Link>
             </div>
           </div>
-          {greeting}
+          {this.props.loading && this.props.currentUser ? null : greeting}
         </div>
       </div>
     );

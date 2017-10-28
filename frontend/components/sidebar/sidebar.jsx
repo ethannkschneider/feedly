@@ -8,6 +8,18 @@ class Sidebar extends React.Component {
     super(props);
 
     this.renderCollections = this.renderCollections.bind(this);
+    this.handleOpenSidebar = this.handleOpenSidebar.bind(this);
+    this.handleCloseSidebar = this.handleCloseSidebar.bind(this);
+  }
+
+  handleOpenSidebar(e) {
+    e.preventDefault();
+    this.props.showSidebar();
+  }
+
+  handleCloseSidebar(e) {
+    e.preventDefault();
+    this.props.hideSidebar();
   }
 
   renderCollections() {
@@ -26,9 +38,28 @@ class Sidebar extends React.Component {
   }
 
   render() {
-    if (!this.props.loading) {
+    if (this.props.loading) {
+      return (
+        <div>null</div>
+      );
+    } else if (!this.props.sidebarVisible) {
+      return (
+        <div className="sidebar-hidden">
+          <div className="open-sidebar-button">
+            <button onClick={this.handleOpenSidebar}>
+              <i className="material-icons">reorder</i>
+            </button>
+          </div>
+        </div>
+      );
+    } else {
       return (
         <div className="sidebar sidebar-container">
+          <div className="close-sidebar-button">
+            <button onClick={this.handleCloseSidebar}>
+              <i className="material-icons">keyboard_arrow_left</i>
+            </button>
+          </div>
           <ul className="sidebar sidebar-links">
             <li>
               <Link to="/"><i className="material-icons">
@@ -51,10 +82,6 @@ class Sidebar extends React.Component {
           </ul>
         </div>
       );
-    } else {
-        return (
-          <div>null</div>
-        );
       }
   }
 }

@@ -1,7 +1,6 @@
 .header-main {
   position: fixed;
   top: 0;
-  left: 0;
   right: 0;
   height: 56px;
   background-color: white;
@@ -9,13 +8,32 @@
   z-index: 9000;
 }
 
+.header-logged-out {
+  left: 0;
+}
+
+.header-sidebar-open {
+  left: 200px;
+}
+
+.header-sidebar-closed {
+  left: 60px;
+}
+
 .header-nav-items {
-  width: 60%;
   height: inherit;
   margin: 0 auto;
   display: flex;
-  justify-content: space-between;
   align-items: center;
+}
+
+.header-logged-out .header-nav-items {
+  justify-content: space-around;
+}
+
+.header-sidebar-open .header-nav-items, .header-sidebar-closed .header-nav-items {
+  justify-content: space-between;
+  padding: 0 33px;
 }
 
 .nav-home-link h1 {

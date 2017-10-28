@@ -25,7 +25,7 @@ const FeedsReducer = (state = {}, action) => {
       // for 'feeds'.
       const feedsArr = collectionsArr.map( (collection) => {
         return collection.feeds;
-      });
+      }).filter(Boolean);
       // Now we have an array, each of whose elements is an object containing
       // all of the feeds belonging to a particular collection. These
       // elements have the form {1: {feed info}, 2: {feed info}, etc.}, which

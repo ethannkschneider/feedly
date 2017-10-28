@@ -43,7 +43,12 @@ end
 
 # Collection Seeds (Demo user's collections remain the same)
 Collection.destroy_all
-User.all.each do |user|
+# Demo User:
+CATEGORIES.each do |category|
+  Collection.create!(name: category, user_id: demo_user.id)
+end
+# extra users
+User.all[1..-1].each do |user|
   num_collections = rand(1...CATEGORIES.length)
   user_categories = CATEGORIES.sample(num_collections)
   user_categories.each do |category|
@@ -59,7 +64,24 @@ end
 
 # Feed Subscriptions
 Subscription.destroy_all
-Collection.all.each do |collection|
+# demo user subscriptions (most realistic)
+
+Subscription.create!(feed_id: Feed.find_by(title: "NYTimes News").id, collection_id: demo_user.collections.find_by(name: "News").id)
+Subscription.create!(feed_id: Feed.find_by(title: "NYTimes Politics").id, collection_id: demo_user.collections.find_by(name: "Politics").id)
+Subscription.create!(feed_id: Feed.find_by(title: "NYTimes Local").id, collection_id: demo_user.collections.find_by(name: "News").id)
+Subscription.create!(feed_id: Feed.find_by(title: "NYTimes Business").id, collection_id: demo_user.collections.find_by(name: "Business").id)
+Subscription.create!(feed_id: Feed.find_by(title: "NYTimes Technology").id, collection_id: demo_user.collections.find_by(name: "Tech").id)
+Subscription.create!(feed_id: Feed.find_by(title: "NYTimes Sports").id, collection_id: demo_user.collections.find_by(name: "Sports").id)
+Subscription.create!(feed_id: Feed.find_by(title: "NYTimes Science").id, collection_id: demo_user.collections.find_by(name: "Science").id)
+Subscription.create!(feed_id: Feed.find_by(title: "NYTimes Arts").id, collection_id: demo_user.collections.find_by(name: "Arts").id)
+Subscription.create!(feed_id: Feed.find_by(title: "NYTimes The Stone").id, collection_id: demo_user.collections.find_by(name: "Philosophy").id)
+Subscription.create!(feed_id: Feed.find_by(title: "ESPN News").id, collection_id: demo_user.collections.find_by(name: "Sports").id)
+Subscription.create!(feed_id: Feed.find_by(title: "The Ringer").id, collection_id: demo_user.collections.find_by(name: "Culture").id)
+Subscription.create!(feed_id: Feed.find_by(title: "Boston Globe Local").id, collection_id: demo_user.collections.find_by(name: "News").id)
+Subscription.create!(feed_id: Feed.find_by(title: "Boston Globe Politics").id, collection_id: demo_user.collections.find_by(name: "Politics").id)
+Subscription.create!(feed_id: Feed.find_by(title: "Politico Politics").id, collection_id: demo_user.collections.find_by(name: "Politics").id)
+# extra users
+Collection.where('user_id != ?', demo_user.id).each do |collection|
   num_feeds = rand(1...FEEDS.length)
   collection_feeds = Feed.all.sample(num_feeds)
   collection_feeds.each do |feed|

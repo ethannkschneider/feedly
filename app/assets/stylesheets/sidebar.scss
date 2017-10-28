@@ -10,6 +10,17 @@
   overflow: scroll;
 }
 
+.sidebar-hidden {
+  position: fixed;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  min-width: 42px;
+  height: auto;
+  background-color: #d2e4ad;
+  z-index: 9001;
+}
+
 .hide-sidebar-feed {
   display: none;
 }
