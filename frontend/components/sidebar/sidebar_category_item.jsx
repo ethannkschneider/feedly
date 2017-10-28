@@ -11,6 +11,7 @@ class SidebarCategoryItem extends React.Component {
 
     this.handleClick = this.handleClick.bind(this);
     this.renderFeedTitles = this.renderFeedTitles.bind(this);
+    this.renderArrowIcon = this.renderArrowIcon.bind(this);
   }
 
   handleClick(e) {
@@ -32,12 +33,18 @@ class SidebarCategoryItem extends React.Component {
     });
   }
 
+  renderArrowIcon() {
+    return this.state.showFeedsList ?
+      <i className="material-icons">keyboard_arrow_down</i> :
+      <i className="material-icons">keyboard_arrow_right</i>;
+  }
+
   render() {
     return (
       <div className="sidebar-categories">
         <li onClick={this.handleClick}
           className="sidebar sidebar-category-name">
-          <i className="material-icons">keyboard_arrow_right</i>
+          {this.renderArrowIcon()}
           {this.props.collection.name}
         </li>
         {this.renderFeedTitles()}

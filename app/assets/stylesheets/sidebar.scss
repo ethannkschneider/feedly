@@ -99,7 +99,7 @@ li.sidebar-category-feeds {
 
 }
 
-li.sidebar-category-name {
+li.sidebar-category-name, li.feeds-list {
   width: 100%;
   margin-left: 20px;
   line-height: 28px;
@@ -125,5 +125,6 @@ li.sidebar-category-name i {
 }
 
 li.feeds-list {
-  background-color: pink;
+  font-weight: normal;
+
 }
