@@ -1,12 +1,20 @@
-.collection-index {
+.collection-index-sidebar-open, .collection-index-sidebar-closed {
   background: #FCF5F5;
   height: auto;
   margin: 0 auto;
   position: absolute;
   top: 57px;
-  left: 0;
   right: 0;
   bottom: 0;
+  width: 100%;
+}
+
+.collection-index-sidebar-open {
+  left: 268px;
+}
+
+.collection-index-sidebar-closed {
+  left: 60px;
 }
 
 .collection-index-loaded {

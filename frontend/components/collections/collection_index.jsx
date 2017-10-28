@@ -8,6 +8,7 @@ class CollectionIndex extends React.Component {
     super(props);
 
     this.renderCollectionItems = this.renderCollectionItems.bind(this);
+    this.cssClassIndexWrapper = this.cssClassIndexWrapper.bind(this);
   }
 
   componentDidMount() {
@@ -28,10 +29,16 @@ class CollectionIndex extends React.Component {
     return collectionItems;
   }
 
+  cssClassIndexWrapper () {
+    return (this.props.sidebarVisible) ?
+      "collection-index-sidebar-open" :
+      "collection-index-sidebar-closed";
+  }
+
   render() {
     let collectionItems = this.renderCollectionItems();
     return (
-      <div className="collection-index">
+      <div className={this.cssClassIndexWrapper()}>
         {this.props.loading ?
           <div className="collection-index-spinner">
             <LoadingSpinner />

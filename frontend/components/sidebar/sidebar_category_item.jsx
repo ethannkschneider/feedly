@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 class SidebarCategoryItem extends React.Component {
 
@@ -36,6 +37,7 @@ class SidebarCategoryItem extends React.Component {
       <div className="sidebar-categories">
         <li onClick={this.handleClick}
           className="sidebar sidebar-category-name">
+          <i className="material-icons">keyboard_arrow_right</i>
           {this.props.collection.name}
         </li>
         {this.renderFeedTitles()}

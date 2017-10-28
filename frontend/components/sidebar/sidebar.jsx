@@ -40,7 +40,7 @@ class Sidebar extends React.Component {
   render() {
     if (this.props.loading) {
       return (
-        <div>null</div>
+        <div>{null}</div>
       );
     } else if (!this.props.sidebarVisible) {
       return (
@@ -54,7 +54,7 @@ class Sidebar extends React.Component {
       );
     } else {
       return (
-        <div className="sidebar sidebar-container">
+        <div className="sidebar-container">
           <div className="close-sidebar-button">
             <button onClick={this.handleCloseSidebar}>
               <i className="material-icons">keyboard_arrow_left</i>
@@ -71,13 +71,12 @@ class Sidebar extends React.Component {
             </li>
           </ul>
 
-          <ul>
-            <div className="sidebar sidebar-categories">
-              <li>
-                <Link to="/"><i className="material-icons">
-                  view_headline</i>All</Link>
-              </li>
-            </div>
+          <ul className="sidebar sidebar-categories">
+            <li className="sidebar-category-feeds">Feeds</li>
+            <li className="sidebar-category-name">
+              <Link to="/"><i className="material-icons">
+                view_headline</i>All</Link>
+            </li>
             {this.renderCollections()}
           </ul>
         </div>
