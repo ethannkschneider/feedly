@@ -35,7 +35,8 @@ class CollectionIndex extends React.Component {
         {this.props.loading ?
           <div className="collection-index-spinner">
             <LoadingSpinner />
-          </div> :
+          </div>
+          :
           <div className="collection-index-wrapper">
             <div className="today-header"><h1>Today</h1></div>
             <div className="collection-index-loaded">

@@ -5,6 +5,7 @@ import { Route, Switch, Link, withRouter } from 'react-router-dom';
 import { AuthRoute, ProtectedRoute } from '../util/route_util';
 
 import NavBarContainer from './nav_bar/nav_bar_container';
+import SidebarContainer from './sidebar/sidebar_container';
 import WelcomePageContainer from './welcome/welcome_page_container';
 import CollectionIndexContainer from './collections/collection_index_container';
 
@@ -32,8 +33,11 @@ class App extends React.Component {
           />
         </Switch>
 
-        <section className="section-main">
-        </section>
+        <ProtectedRoute
+          path="/"
+          component={SidebarContainer}
+        />
+
       </div>
     );
   }
