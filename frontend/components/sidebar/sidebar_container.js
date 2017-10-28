@@ -4,7 +4,7 @@ import Sidebar from './sidebar';
 const mapStateToProps = (state) => {
   return {
     collections: Object.values(state.entities.collections),
-    feeds: Object.values(state.entities.feeds),
+    feeds: state.entities.feeds,
     loading: state.ui.collectionsIndex
   };
 };

@@ -34,7 +34,8 @@ class SidebarCategoryItem extends React.Component {
   render() {
     return (
       <div className="sidebar-categories">
-        <li className="sidebar feeds-list">
+        <li onClick={this.handleClick}
+          className="sidebar sidebar-category-name">
           {this.props.collection.name}
         </li>
         {this.renderFeedTitles()}

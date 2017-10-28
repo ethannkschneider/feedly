@@ -7,4 +7,17 @@
   height: auto;
   background-color: #d2e4ad;
   z-index: 9001;
+  overflow: scroll;
+}
+
+.hide-sidebar-feed {
+  display: none;
+}
+
+li.sidebar-category-name {
+  background-color: blue;
+}
+
+li.feeds-list {
+  background-color: pink;
 }

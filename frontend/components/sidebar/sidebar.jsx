@@ -20,7 +20,7 @@ class Sidebar extends React.Component {
       return (<SidebarCategoryItem
         key={collection.id}
         collection={collection}
-        feeds={userFeeds} />);
+        feeds={categoryFeeds} />);
     });
     return categoryItems;
   }
