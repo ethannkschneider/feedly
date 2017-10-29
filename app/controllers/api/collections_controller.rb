@@ -4,12 +4,12 @@ class Api::CollectionsController < ApplicationController
   before_action :require_logged_in
 
   def index
-    @collections = current_user.collections.includes(:feeds)
+    @collections = current_user.collections.includes(:feeds, :articles)
     render :index
   end
 
   def show
-    @collection = current_user.collections.find(params[:id]).includes(:feeds)
+    @collection = current_user.collections.find(params[:id]).includes(:feeds, :articles)
     render :show
   end
 

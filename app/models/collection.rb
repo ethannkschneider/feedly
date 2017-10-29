@@ -20,4 +20,8 @@ class Collection < ApplicationRecord
     through: :subscriptions,
     source: :feed
 
+  has_many :articles,
+    through: :feeds,
+    source: :articles
+
 end
