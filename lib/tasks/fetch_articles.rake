@@ -18,7 +18,8 @@ task fetch_articles: :environment do
         date_published: article.published,
         content: content,
         summary: article.summary,
-        image_url: new_article_image_url
+        image_url: new_article_image_url,
+        url: article.url
       )
     end
   end
