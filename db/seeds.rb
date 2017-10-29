@@ -6,6 +6,8 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 require 'faker'
+require 'nokogiri'
+require 'open-uri'
 
 CATEGORIES = [
   'News', 'Tech', 'Politics', 'Science', 'Sports',
@@ -59,7 +61,8 @@ end
 # Feed Seeds
 Feed.destroy_all
 FEEDS.each do |title, url|
-  Feed.create!(title: title, url: url)
+  feed = Feed.create!(title: title, url: url, image_url: image_url)
+  feed.set_image_url!
 end
 
 # Feed Subscriptions
