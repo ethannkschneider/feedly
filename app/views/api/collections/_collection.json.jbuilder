@@ -1,11 +1,11 @@
 json.extract! colleccion, :id, :name
 
 json.feedIds do
-  json.array! colleccion.feeds.map(&:id)
+  json.array! feeds.map(&:id)
 end
 
 json.feeds do
-  colleccion.feeds.each do |feed|
+  feeds.each do |feed|
     json.set! feed.id do
       json.partial! 'api/feeds/feed', feed: feed
     end

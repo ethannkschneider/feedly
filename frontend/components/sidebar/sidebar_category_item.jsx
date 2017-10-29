@@ -27,6 +27,7 @@ class SidebarCategoryItem extends React.Component {
     return this.props.feeds.map( (feed) => {
       return (
         <li key={feed.id} className={cssClass}>
+          <img src={feed.image_url} className="sidebar-favicon" />
           {feed.title}
         </li>
       );
