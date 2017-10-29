@@ -18,7 +18,7 @@
 }
 
 .collection-index-loaded {
-  background: #FCF5F5;
+  background: white;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -41,6 +41,7 @@
 .collection-index-item {
   width: 100%;
   padding: 20px;
+  height: auto;
 }
 
 .collection-name {

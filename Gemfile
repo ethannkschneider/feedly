@@ -38,6 +38,8 @@ gem "feedjira"
 gem "nokogiri"
 # for seeding the database
 gem 'faker'
+# for sanitizing html fragments in feed content
+gem 'sanitize'
 
 
 

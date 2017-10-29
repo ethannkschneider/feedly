@@ -16,14 +16,15 @@ class CollectionIndexArticleIndexItem extends React.Component {
     this.toggleBookmark = this.toggleBookmark.bind(this);
   }
 
-  toggleBookmark() {
+  toggleBookmark(e) {
+    e.preventDefault();
     this.setState({ isBookmarked: !this.state.isBookmarked });
   }
 
   cssBookmarkClass() {
     return this.state.isBookmarked ?
-      "collections-index-article-index-item-bookmarked" :
-      "collections-index-article-index-item-not-bookmarked";
+      "bookmark collections-index-article-index-item-bookmarked" :
+      "bookmark collections-index-article-index-item-not-bookmarked";
   }
 
   articleSummary() {
@@ -34,9 +35,10 @@ class CollectionIndexArticleIndexItem extends React.Component {
   render() {
     return (
       <li className="collections-index-article-index-item">
-        <div onClick={this.toggleBookmark} className={this.cssBookmarkClass()}>
+        <button onClick={this.toggleBookmark}
+          className={this.cssBookmarkClass()}>
           <i className="material-icons">bookmark_border</i>
-        </div>
+        </button>
         <div className="collections-index-article-index-item-feed-name">
           {this.props.articleFeedName}
         </div>

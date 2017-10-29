@@ -1,8 +1,71 @@
 .collections-index-article-index-item {
-  background-color: blue;
   height: 20px;
 }
 
 ul.collection-index-article-index {
-  height: 20px;
+  height: auto;
+}
+
+li.collections-index-article-index-item {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  height: 31px;
+  text-overflow: ellipsis;
+  cursor: pointer;
+  box-sizing: border-box;
+  border-top: 1px solid rgba(239, 239, 239, 0.8);
+}
+
+li.collections-index-article-index-item:hover{
+  background-color: #EEEFEF;
+}
+
+li.collections-index-article-index-item > div {
+  height: 31px;
+  font-size: 12px;
+  color: rgb(117, 117, 117);
+  margin-right: 8px;
+  overflow-x: hidden;
+  overflow-y: hidden;
+  text-overflow: ellipsis;
+  line-height: 31px;
+  display: inline-block;
+}
+
+div.collection-name {
+  margin-bottom: 16px;
+}
+
+li.collections-index-article-index-item button.bookmark {
+  display: block;
+  height: 31px;
+  width: 24px;
+  border: none;
+}
+
+li.collections-index-article-index-item button.bookmark i {
+  opacity: 0.6;
+  color: #636363;
+  font-weight: normal;
+  font-size: 20px;
+}
+
+.collections-index-article-index-item-feed-name {
+  max-width: 100px;
+  min-width: 100px;
+  text-overflow: ellipsis;
+  // flex-grow: 2;
+}
+
+li.collections-index-article-index-item > div.collections-index-article-index-item-headline {
+  margin-right: 20px;
+  width: auto;
+  text-overflow: ellipsis;
+  font-weight: bold;
+}
+
+li.collections-index-article-index-item > div.collections-index-article-index-item-short-summary {
+  flex-shrink: 5;
+  text-overflow: ellipsis;
 }
