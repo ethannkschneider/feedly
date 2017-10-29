@@ -73,3 +73,8 @@ li.collections-index-article-index-item > div.collections-index-article-index-it
   flex-shrink: 5;
   text-overflow: ellipsis;
 }
+
+li.collections-index-article-index-item > div > span {
+  max-height: 31px;
+  text-overflow: ellipsis;
+}
