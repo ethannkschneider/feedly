@@ -51,6 +51,10 @@ li.collections-index-article-index-item button.bookmark i {
   font-size: 20px;
 }
 
+li.collections-index-article-index-item button.bookmark.collections-index-article-index-item-bookmarked i {
+  color: green;
+}
+
 .collections-index-article-index-item-feed-name {
   max-width: 100px;
   min-width: 100px;

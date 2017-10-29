@@ -37,7 +37,8 @@ class CollectionIndexArticleIndexItem extends React.Component {
       <li className="collections-index-article-index-item">
         <button onClick={this.toggleBookmark}
           className={this.cssBookmarkClass()}>
-          <i className="material-icons">bookmark_border</i>
+          <i className="material-icons">
+            {this.state.isBookmarked ? "bookmark" : "bookmark_border"}</i>
         </button>
         <div className="collections-index-article-index-item-feed-name">
           {this.props.articleFeedName}
