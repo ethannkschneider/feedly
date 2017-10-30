@@ -20,6 +20,10 @@
   left: 60px;
 }
 
+.organize-sources-wrapper {
+  height: auto;
+  background-color: lightgreen;
+}
 .organize-sources-header {
   color: rgb(51, 51, 51);
   font-size: 2.125rem;
@@ -29,6 +33,7 @@
   background-color: lightblue;
   width: 900px;
   margin-top: 50px;
+  height: 150px;
 }
 
 .organize-sources-header h2 {

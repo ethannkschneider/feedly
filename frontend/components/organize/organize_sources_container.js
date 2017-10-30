@@ -20,7 +20,8 @@ const mapStateToProps = (state) => {
 const mapDispatchToProps = (dispatch) => {
   return {
     turnOffLoading: () => dispatch(turnOffLoading('organizeSources')),
-    turnOnLoading: () => dispatch(turnOnLoading('organizeSources'))
+    turnOnLoading: () => dispatch(turnOnLoading('organizeSources')),
+    requestCollections: () => dispatch(requestCollections())
   };
 };
 

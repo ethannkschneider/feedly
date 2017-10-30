@@ -6,8 +6,8 @@ import merge from 'lodash/merge';
 // Keys with names of components point to a Boolean specifying if they
 // are currently loading; showSidebar is self-explanatory
 const defaultState = {
-  collectionsIndex: true,
-  organizeSources: true,
+  collectionsIndex: false,
+  organizeSources: false,
   showSidebar: false
 };
 

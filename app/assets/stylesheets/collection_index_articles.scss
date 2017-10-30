@@ -65,12 +65,13 @@ li.collections-index-article-index-item button.bookmark.collections-index-articl
 li.collections-index-article-index-item > div.collections-index-article-index-item-headline {
   margin-right: 20px;
   width: auto;
-  text-overflow: ellipsis;
   font-weight: bold;
+  white-space: nowrap;
+  flex-shrink: 0;
 }
 
 li.collections-index-article-index-item > div.collections-index-article-index-item-short-summary {
-  flex-shrink: 5;
+  flex-shrink: 1;
   text-overflow: ellipsis;
 }
 

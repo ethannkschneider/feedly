@@ -61,11 +61,14 @@ class CollectionIndexArticleIndexItem extends React.Component {
           <div className="collections-index-article-index-item-feed-name">
             {this.props.articleFeedName}
           </div>
-          <div className="collections-index-article-index-item-headline">
-            <span onClick={this.toggleExpand}>{this.props.article.headline}</span>
+          <div
+            onClick={this.toggleExpand}
+            className="collections-index-article-index-item-headline">
+            {this.props.article.headline}
           </div>
-          <div className="collections-index-article-index-item-short-summary">
-            <span onClick={this.toggleExpand}>{this.articleSummary()}</span>
+          <div onClick={this.toggleExpand}
+            className="collections-index-article-index-item-short-summary">
+            {this.articleSummary()}
           </div>
         </li>
       );
