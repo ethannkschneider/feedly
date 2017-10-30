@@ -3,10 +3,11 @@ import {
   SHOW_SIDEBAR, HIDE_SIDEBAR} from '../actions/ui_actions';
 import merge from 'lodash/merge';
 
-// For now, collectionsIndex is the only key the tells the app if it's loading.
-
+// Keys with names of components point to a Boolean specifying if they
+// are currently loading; showSidebar is self-explanatory
 const defaultState = {
   collectionsIndex: true,
+  organizeSources: true,
   showSidebar: false
 };
 
