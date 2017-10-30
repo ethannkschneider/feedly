@@ -78,3 +78,96 @@ li.collections-index-article-index-item > div > span {
   max-height: 31px;
   text-overflow: ellipsis;
 }
+
+.expanded-article-show-wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  border: 1px solid rgba(0, 0, 0, 0.15);
+  border-radius: 3px;
+  padding: 0 15px;
+}
+
+.close-article-show-arrow {
+  cursor: pointer;
+}
+.expanded-article-show-header {
+  width: auto;
+  max-width: 647px;
+  height: 115px;
+  padding-top: 15px;
+}
+
+.expanded-article-show-headline {
+  font-size: 1.5rem;
+  line-height: 1.7rem;
+  font-weight: bold;
+}
+
+.expanded-article-show-byline {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+.expanded-article-show-byline h6 {
+  color: rgb(158, 158, 158);
+  font-size: 12px;
+  line-height: 16px;
+  cursor: pointer;
+  font-weight: normal;
+  margin: 10px 0;
+}
+
+.expanded-article-show-byline button {
+  padding: 0;
+  min-width: 25px;
+  margin-left: 23px;
+  border: none;
+}
+
+.expanded-article-show-byline button.collections-index-article-index-item-bookmarked i {
+  color: green;
+}
+
+.expanded-article-show-byline button i {
+  font-size: 18px;
+}
+
+.expanded-article-show-image {
+  max-width: 580px;
+  width: 200px;
+  border-radius: 5px;
+  border: 1px solid rgb(239, 239, 239);
+}
+
+.expanded-article-show-summary-content {
+  width: auto;
+  max-width: 647px;
+  height: auto;
+  padding: 20px 0;
+  font-size: 15px;
+  word-break: break-word;
+  cursor: auto;
+  line-height: 25px;
+}
+
+.expanded-article-show-visit-website button {
+  text-transform: uppercase;
+  width: 647px;
+  height: 40px;
+  color: rgb(117, 117, 117);
+  border: 1px solid rgba(0, 0, 0, 0.15);
+  border-radius: 4px;
+  cursor: pointer;
+  line-height: 16px;
+  font-size: 12px;
+  font-weight: bold;
+  margin: 0 auto;
+  margin-bottom: 20px;
+}
+
+.expanded-article-show-visit-website {
+  min-height: 40px;
+  min-width: 647px;
+}

@@ -23,27 +23,35 @@ class ArticleShowItem extends React.Component {
   render() {
     return (
       <div className="expanded-article-show-wrapper">
-        <div onClick={this.props.toggleExpand}>
+        <div className="close-article-show-arrow"
+          onClick={this.props.toggleExpand}>
           <i className="material-icons">keyboard_arrow_up</i>
         </div>
-        <div>
-          <h1>{this.props.article.headline}</h1>
+        <div className="expanded-article-show-header">
+          <div className="expanded-article-show-headline">
+            <h1>{this.props.article.headline}</h1>
+          </div>
+          <div className="expanded-article-show-byline">
+            <h6>{this.props.articleFeedName} by {this.props.article.author}</h6>
+              <button onClick={this.props.toggleBookmark}
+                className={this.cssBookmarkClass()}>
+                <i className="material-icons">
+                  {this.props.isBookmarked ? "bookmark" : "bookmark_border"}</i>
+              </button>
+          </div>
         </div>
         <div>
-          <h6>{this.props.articleFeedName} by {this.props.article.author}</h6>
+          <img src={this.props.article.image_url}
+            className="expanded-article-show-image"
+          />
         </div>
-        <div>
-          <button onClick={this.props.toggleBookmark}
-            className={this.cssBookmarkClass()}>
-            <i className="material-icons">
-              {this.props.isBookmarked ? "bookmark" : "bookmark_border"}</i>
-          </button>
+        <div className="expanded-article-show-summary-content">
+          <p>{this.articleSummary()}</p>
         </div>
-        <div>
-          {this.articleSummary()}
-        </div>
-        <div>
-          {this.props.article.url}
+        <div className="expanded-article-show-visit-website">
+          {this.props.article.url ?
+            <button>Visit Website</button> : ""
+          }
         </div>
       </div>
     );
