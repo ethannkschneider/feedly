@@ -75,6 +75,14 @@ class OrganizeSources extends React.Component {
         <div className={this.cssClassOrganizeWrapper()}>
           <div className="organize-sources-wrapper">
             <div className="organize-sources-header">
+              <div className="edit-collections-buttons-wrapper">
+                <div className="edit-collections-button">
+                  Create Collection
+                </div>
+                <div className="edit-collections-button">
+                  Delete Collection
+                </div>
+              </div>
               <h1>Organize Sources</h1>
               <h2>Following {this.props.feeds.length} sources</h2>
             </div>
@@ -82,28 +90,23 @@ class OrganizeSources extends React.Component {
               <div className="filter-sources-dropdown">
                 <h3>Feed</h3>
               </div>
-              <div>
-                Create Collection
-              </div>
-              <div>
-                Delete Collection and Associated Feeds
-              </div>
+
               <div className="filter-soures-search">
                 <h3>Search</h3>
               </div>
             </div>
-            <div className="organzie-sources-edit-sources-wrapper">
-              <div className="organize-sources-table-header">
-                <div>Source Name</div>
+            <table className="organize-sources-edit-sources-wrapper">
+              <th className="organize-sources-table-header">
+                <div className="organize-sources-source-name">Source Name</div>
                 <div className="organize-sources-buttons">
                   <div onClick={this.handleReorganizeSources}>Reorganize</div>
                   <div onClick={this.handleUnfollowSources}>Unfollow</div>
                 </div>
-              </div>
-              <div>
+              </th>
+              <tbody>
                 {this.renderSources()}
-              </div>
-            </div>
+              </tbody>
+            </table>
           </div>
         </div>
       );

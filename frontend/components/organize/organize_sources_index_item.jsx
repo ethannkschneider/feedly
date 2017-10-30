@@ -22,7 +22,7 @@ class OrganizeSourcesIndexItem extends React.Component {
   render() {
     const feedTitle = this.props.feed.title;
     return (
-      <div>
+      <tr className="organize-sources-table-row">
         <input
           type="checkbox"
           checked={this.state.isChecked}
@@ -30,9 +30,12 @@ class OrganizeSourcesIndexItem extends React.Component {
           >
         </input>
         <div>
+          <img src={this.props.feed.image_url} />
+        </div>
+        <div className="organize-sources-table-row-title">
           {feedTitle}
         </div>
-      </div>
+      </tr>
     );
   }
 }
