@@ -23,18 +23,24 @@ class OrganizeSourcesIndexItem extends React.Component {
     const feedTitle = this.props.feed.title;
     return (
       <tr className="organize-sources-table-row">
-        <input
-          type="checkbox"
-          checked={this.state.isChecked}
-          onChange={this.toggleCheck}
-          >
-        </input>
-        <div>
-          <img src={this.props.feed.image_url} />
-        </div>
-        <div className="organize-sources-table-row-title">
-          {feedTitle}
-        </div>
+        <td>
+          <input
+            type="checkbox"
+            checked={this.state.isChecked}
+            onChange={this.toggleCheck}
+            >
+          </input>
+        </td>
+        <td>
+          <div>
+            <img src={this.props.feed.image_url} />
+          </div>
+        </td>
+        <td>
+          <div className="organize-sources-table-row-title">
+            {feedTitle}
+          </div>
+        </td>
       </tr>
     );
   }
