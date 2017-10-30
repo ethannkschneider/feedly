@@ -8,6 +8,7 @@ import NavBarContainer from './nav_bar/nav_bar_container';
 import SidebarContainer from './sidebar/sidebar_container';
 import WelcomePageContainer from './welcome/welcome_page_container';
 import CollectionIndexContainer from './collections/collection_index_container';
+import OrganizeSourcesContainer from './organize/organize_sources_container';
 
 class App extends React.Component {
   constructor() {
@@ -21,22 +22,25 @@ class App extends React.Component {
         <header >
           <NavBarContainer/>
         </header>
+        <ProtectedRoute
+          path="/"
+          component={SidebarContainer}
+          />
         <Switch>
           <AuthRoute
             path="/welcome"
             component={WelcomePageContainer}
           />
-
+          <ProtectedRoute
+            path="/organize"
+            component={OrganizeSourcesContainer}
+          />
           <ProtectedRoute
             path="/"
             component={CollectionIndexContainer}
           />
         </Switch>
 
-        <ProtectedRoute
-          path="/"
-          component={SidebarContainer}
-        />
 
       </div>
     );

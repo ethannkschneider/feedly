@@ -96,7 +96,17 @@ li.sidebar-category-feeds {
   line-height: 28px;
   color: rgba(0, 0, 0, 0.63);
   text-transform: uppercase;
+  display: flex;
+  justify-content: space-between;
+}
 
+.sidebar-icon-gear {
+  margin-right: 15px;
+}
+
+.sidebar-icon-gear i {
+  font-size: 17px;
+  color: rgba(0, 0, 0, 0.63);
 }
 
 li.sidebar-category-name, li.feeds-list {
@@ -135,5 +145,4 @@ li.sidebar-category-name i {
 
 li.feeds-list {
   font-weight: normal;
-
 }

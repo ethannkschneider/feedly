@@ -72,7 +72,14 @@ class Sidebar extends React.Component {
           </ul>
 
           <ul className="sidebar sidebar-categories">
-            <li className="sidebar-category-feeds">Feeds</li>
+            <li className="sidebar-category-feeds">
+              <div>Feeds</div>
+              <div className="sidebar-icon-gear">
+                <Link to="/organize">
+                  <i className="material-icons">settings</i>
+                </Link>
+              </div>
+            </li>
             <li className="sidebar-category-name">
               <Link to="/"><i className="material-icons">
                 view_headline</i>All</Link>
