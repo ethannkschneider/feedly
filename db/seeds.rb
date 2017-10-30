@@ -61,7 +61,7 @@ end
 # Feed Seeds
 Feed.destroy_all
 FEEDS.each do |title, url|
-  feed = Feed.create!(title: title, url: url, image_url: image_url)
+  feed = Feed.create!(title: title, url: url)
   feed.set_image_url!
 end
 
