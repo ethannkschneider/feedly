@@ -22,7 +22,8 @@ const mapDispatchToProps = (dispatch) => {
     turnOffLoading: () => dispatch(turnOffLoading('organizeSources')),
     turnOnLoading: () => dispatch(turnOnLoading('organizeSources')),
     requestCollections: () => dispatch(requestCollections()),
-    deleteCollection: (collectionId) => dispatch(deleteCollection(collectionId))
+    deleteCollection: (collectionId) => dispatch(deleteCollection(collectionId)),
+    createCollection: (collection) => dispatch(createCollection(collection))
   };
 };
 

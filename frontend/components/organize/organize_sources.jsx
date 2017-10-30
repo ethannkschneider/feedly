@@ -57,7 +57,15 @@ class OrganizeSources extends React.Component {
   }
 
   handleAddNewCollection(e) {
-
+    // don't allow empty names!
+    if (this.state.addFeedText) {
+      this.props.turnOnLoading();
+      this.props.createCollection({ name: this.state.addFeedText })
+        .then( (res) => {
+          this.props.turnOffLoading();
+          this.setState({ addFeedText: ""});
+        });
+    }
   }
 
   handleReorganizeSources() {
@@ -112,7 +120,7 @@ class OrganizeSources extends React.Component {
                 <input
                   type="text"
                   onChange={this.linkInputToState}
-                  value={this.state.value}
+                  value={this.state.addFeedText}
                 />
                 <div className="add-new-collection-bottom-wrapper">
                   <div className="add-new-collection-label">
