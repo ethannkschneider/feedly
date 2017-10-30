@@ -44,13 +44,13 @@ const FeedsReducer = (state = {}, action) => {
       feeds = action.collection.feeds;
       newState = merge({}, state, feeds);
       return newState;
-    case REMOVE_COLLECTION:
-      feeds = action.collection.feeds;
-      newState = merge({}, state);
-      Object.keys(feeds).forEach( (feedId) => {
-        delete newState[feedId];
-      });
-      return newState;
+    // case REMOVE_COLLECTION:
+    //   feeds = action.collectionId.feeds;
+    //   newState = merge({}, state);
+    //   Object.keys(feeds).forEach( (feedId) => {
+    //     delete newState[feedId];
+    //   });
+    //   return newState;
     default:
       return state;
   }

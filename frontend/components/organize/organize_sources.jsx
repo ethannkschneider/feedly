@@ -49,12 +49,15 @@ class OrganizeSources extends React.Component {
 
   handleDeleteCollection(e) {
     if (e.value) {
-      this.props.deleteCollection(e.value);
+      this.props.turnOnLoading();
+      this.props.deleteCollection(e.value)
+        .then( (res) => this.props.requestCollections())
+        .then( (res) => this.props.turnOffLoading());
     }
   }
 
   handleAddNewCollection(e) {
-    
+
   }
 
   handleReorganizeSources() {

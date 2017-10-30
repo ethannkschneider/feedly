@@ -14,7 +14,10 @@ class Collection < ApplicationRecord
 
   belongs_to :user
 
-  has_many :subscriptions
+  # if a user gets rid of a collectino, they will lose all of the feeds
+  # in that collection
+  has_many :subscriptions,
+    dependent: :destroy
 
   has_many :feeds,
     through: :subscriptions,

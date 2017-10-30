@@ -31,13 +31,13 @@ const ArticlesReducer = (state = {}, action) => {
       articles = action.collection.articles;
       newState = merge({}, state, articles);
       return newState;
-    case REMOVE_COLLECTION:
-      articles = action.collection.articles;
-      newState = merge({}, state);
-      Object.keys(articles).forEach( (articleId) => {
-        delete newState[articleId];
-      });
-      return newState;
+    // case REMOVE_COLLECTION:
+    //   articles = action.collection.articles;
+    //   newState = merge({}, state);
+    //   Object.keys(articles).forEach( (articleId) => {
+    //     delete newState[articleId];
+    //   });
+    //   return newState;
     default:
       return state;
   }
