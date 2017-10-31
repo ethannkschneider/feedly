@@ -15,12 +15,11 @@ class Api::SubscriptionsController < ApplicationController
     @subscription = Subscription.find_by_feed_and_collection(
       subscription_params[:feed_id],
       params[:id]
-    )
+    ).includes(:collection, :feed)
 
     if @subscription
       @subscription.destroy
-      @collections = current_user.collections.includes(:feeds, :articles)
-      render 'api/collections/index'
+      render :show
     else
       render json: ["Unable to remove subscription"], status: 422
     end

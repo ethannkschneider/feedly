@@ -3,6 +3,7 @@ import LoadingSpinner from '../loading_spinner';
 import OrganizeSourcesIndexItem from'./organize_sources_index_item';
 import merge from 'lodash/merge';
 import Dropdown from 'react-dropdown';
+// import { unfollowFeeds } from '../../actions/feed_actions';
 
 class OrganizeSources extends React.Component {
 
@@ -75,37 +76,32 @@ class OrganizeSources extends React.Component {
   handleUnfollowSources() {
     if (this.state.selectedSources.length > 0) {
       let feedIdsToDelete = this.state.selectedSources;
-
-      // Iterate through all selected feeds, then for each feed, iterate
-      // through collectionIds to remove each subscription (since each feed can
-      // be associated with multiple collections by the same user.)
-
-      feedIdsToDelete.forEach( (feedId) => {
-        this.props.feedObjects[feedId].collectionIds.forEach( (collectionId) => {
-          this.props.turnOnLoading();
-          this.props.unsubscribeFromFeed(collectionId, feedId)
-            .then( (res) => this.props.requestCollections())
-            .then( (res) => {
-              this.props.turnOffLoading();
-              this.setState({
-                selectedSources: []
-              });
-            });
-        });
-      });
+      this.props.turnOnLoading();
+      this.props.unfollowFeeds(feedIdsToDelete)
+        .then( (res) => this.props.requestCollections())
+        .then( (res) => {
+          this.props.turnOffLoading();
+          this.setState({ selectedSources: []});
+        })
+        .fail( (errors) => this.props.receiveErrors(errors));
     }
   }
 
   renderSources() {
-    return this.props.feeds.map( (feed) => {
-      return (
-        <OrganizeSourcesIndexItem
-          feed={feed}
-          selectOrUnselectSource={this.selectOrUnselectSource}
-          key={feed.id}
-        />
-      );
-    });
+    // Since currentUser is bootstrapped, but state.entities is not,
+    // we will run into issues with this.props.feeds being an array
+    // of undefined values. This protects agains that:
+    if (!(typeof this.props.feeds[0] === 'undefined')) {
+      return this.props.feeds.map( (feed) => {
+        return (
+          <OrganizeSourcesIndexItem
+            feed={feed}
+            selectOrUnselectSource={this.selectOrUnselectSource}
+            key={feed.id}
+          />
+        );
+      });
+    }
   }
 
   cssClassOrganizeWrapper () {

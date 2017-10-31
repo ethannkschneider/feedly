@@ -23,12 +23,14 @@ class Sidebar extends React.Component {
   }
 
   renderCollections() {
-    let userFeeds = this.props.feeds;
+    let allFeeds = this.props.allFeeds;
     let categoryItems, categoryFeeds;
+
     categoryItems = this.props.collections.map( (collection) => {
       categoryFeeds = collection.feedIds.map( (id) => {
-        return userFeeds[id];
+        return allFeeds[id];
       });
+
       return (<SidebarCategoryItem
         key={collection.id}
         collection={collection}

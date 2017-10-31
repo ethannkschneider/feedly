@@ -9,13 +9,13 @@ import {
 
 import {
   subscribeToFeed,
-  unsubscribeFromFeed
+  unsubscribeFromFeed, unfollowFeeds
 } from '../../actions/feed_actions';
 
 const mapStateToProps = (state) => {
   return {
     collections: Object.values(state.entities.collections),
-    feeds: Object.values(state.entities.feeds),
+    feeds: state.session.currentUser.feed_ids.map( (id) => state.entities.feeds[id]),
     feedObjects: state.entities.feeds,
     loading: state.ui.organizeSources,
     sidebarVisible: state.ui.showSidebar
@@ -31,7 +31,8 @@ const mapDispatchToProps = (dispatch) => {
     createCollection: (collection) => dispatch(createCollection(collection)),
     subscribeToFeed: (colId, feedId) => dispatch(subscribeToFeed(colId, feedId)),
     unsubscribeFromFeed: (colId, feedId) => dispatch(unsubscribeFromFeed(colId, feedId)),
-    receiveErrors: (errors) => dispatch(receiveErrors(errors))
+    receiveErrors: (errors) => dispatch(receiveErrors(errors)),
+    unfollowFeeds: (feedIds) => unfollowFeeds(feedIds)
   };
 };
 

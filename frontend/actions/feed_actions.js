@@ -1,8 +1,8 @@
 import * as FeedUtil from '../util/feed_util';
-import { receiveErrors } from './collection_actions';
+import { receiveErrors, requestCollections } from './collection_actions';
 
-export const RECEIVE_FEED = "REMOVE_FEED";
-export const REMOVE_FEED = "REMOVE_FEED";
+export const RECEIVE_FEED = "RECEIVE_FEED";
+export const REMOVE_FEED_FROM_COLLECTION = "REMOVE_FEED_FROM_COLLECTION";
 
 export const receiveFeed = (feed) => {
   return {
@@ -11,10 +11,11 @@ export const receiveFeed = (feed) => {
   };
 };
 
-export const removeFeed = (feedId) => {
+export const removeFeedFromCollection = (feed, collection) => {
   return {
-    type: REMOVE_FEED,
-    feedId
+    type: REMOVE_FEED_FROM_COLLECTION,
+    feed,
+    collection
   };
 };
 
@@ -26,12 +27,10 @@ export const subscribeToFeed = (collectionId, feedId) => (dispatch) => {
 
 export const unsubscribeFromFeed = (collectionId, feedId) => (dispatch) => {
   return FeedUtil.unsubscribeFromFeed(collectionId, feedId)
-    .then( (id) => dispatch(removeFeed(id)),
+    .then( (res) => dispatch(removeFeedFromCollection(res.feed, res.collection)),
       (errors) => dispatch(receiveErrors(errors)));
 };
 
-
-
-// HOW DEAL W UNSUBSCRIBE?
-// 1) EASIEST WAY SEEMS TO BE TO REQUEST ALL COLLECTIONS AGAIN!
-// 2) COULD ALSO DEAL WITH SPECIFIC ACTIONS, BUT THIS GETS MORE COMPLICATED
+export const unfollowFeeds = (feedIds) => {
+  return FeedUtil.unfollowFeeds(feedIds);
+};

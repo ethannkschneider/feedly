@@ -1,5 +1,5 @@
 class Api::FeedsController < ApplicationController
-  # Need to add jbuilder views once we get into articles
+
   def show
     @feed = current_user.feeds.find(params[:id])
     render json: @feed.title
@@ -7,5 +7,21 @@ class Api::FeedsController < ApplicationController
 
   def index
     @feeds = Feed.all
+  end
+
+  def unsubscribe_from_current_user_collections
+    @feed_subscriptions = current_user.subscriptions.where(feed_id: feeds_params[:feed_ids])
+    
+    if @feed_subscriptions
+
+      @feed_subscriptions.destroy_all
+      render json: ["Successfully unsubscribed"], status: 200
+    else
+      render json: ["Current user has no collections containing that feed!"], status: 404
+    end
+  end
+
+  def feeds_params
+    params.require(:feeds).permit(feed_ids: [])
   end
 end

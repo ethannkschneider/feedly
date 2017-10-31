@@ -21,8 +21,10 @@ export const unsubscribeFromFeed = (collectionId, feedId) => {
   });
 };
 
-// export const fetchFeeds = () => {
-//   return $.ajax({
-//     url: ''
-//   });
-// };
+export const unfollowFeeds = (feedIds) => {
+  return $.ajax({
+    url: `api/feeds/unfollow`,
+    method: 'post',
+    data: { feeds: { feed_ids: feedIds } }
+  });
+};

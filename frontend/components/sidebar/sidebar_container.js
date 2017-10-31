@@ -5,7 +5,9 @@ import { showSidebar, hideSidebar } from '../../actions/ui_actions';
 const mapStateToProps = (state) => {
   return {
     collections: Object.values(state.entities.collections),
-    feeds: state.entities.feeds,
+    allFeeds: state.entities.feeds,
+    feeds: state.session.currentUser.feed_ids.map( (id) => state.entities.feeds[id]),
+    feedsById: state.session.currentUser.feeds_by_id,
     loading: state.ui.collectionsIndex,
     sidebarVisible: state.ui.showSidebar
   };

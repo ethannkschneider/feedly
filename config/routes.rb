@@ -5,8 +5,9 @@ Rails.application.routes.draw do
 
   namespace :api, defaults: {format: :json} do
     resource :session, only: [:create, :destroy]
-    resources :users, only: [:create]
+    resources :users, only: [:create, :show]
     resources :feeds, only: [:show]
+    post '/feeds/unfollow', to: 'feeds#unsubscribe_from_current_user_collections'
     resources :collections, except: [:new, :edit]
     post '/collections/:id/unsubscribe', to: 'subscriptions#destroy'
     # Should we namespace subscriptions under collections?

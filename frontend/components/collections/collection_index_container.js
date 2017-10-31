@@ -11,7 +11,7 @@ const mapStateToProps = (state) => {
     collections: Object.keys(state.entities.collections).map( (id) => {
       return state.entities.collections[id];
     }),
-    feeds: Object.values(state.entities.feeds),
+    feeds: state.session.currentUser.feed_ids.map( (id) => state.entities.feeds[id]),
     articles: Object.values(state.entities.articles),
     loading: state.ui.collectionsIndex,
     sidebarVisible: state.ui.showSidebar
