@@ -4,8 +4,8 @@ class Api::SubscriptionsController < ApplicationController
     @subscription = Subscription.new(subscription_params)
 
     if @subscription.save
-      #change later once you figure out what should happen after user subscribes to a feed
-      render json: ["Successfully subscribed!"], status: 200
+      @collections = current_user.collections.includes(:feeds, :articles)
+      render 'api/collections/index'
     else
       render json: @subscription.errors.full_messages, status: 422
     end
@@ -19,8 +19,8 @@ class Api::SubscriptionsController < ApplicationController
 
     if @subscription
       @subscription.destroy
-      # change later (see above)
-      render json: ["Successfully unsubscribed from feed!"]
+      @collections = current_user.collections.includes(:feeds, :articles)
+      render 'api/collections/index'
     else
       render json: ["Unable to remove subscription"], status: 422
     end

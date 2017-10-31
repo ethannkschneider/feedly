@@ -14,7 +14,8 @@ export const unsubscribeFromFeed = (collectionId, feedId) => {
   return $.ajax({
     url: `api/collections/${collectionId}/unsubscribe`,
     method: 'post',
-    data: { subscriptions: {
+    data: { subscription: {
+      collection_id: collectionId,
       feed_id: feedId
     }}
   });

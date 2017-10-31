@@ -73,12 +73,33 @@ class OrganizeSources extends React.Component {
   }
 
   handleUnfollowSources() {
-    // let feedIdsToDelete = this.state.selectedSources;
-    // this.setState({
-    //   selectedSources: []
-    // });
-    // feedIdsToDelete.forEach( (feedId) =>)
-    // this.props.deleteCollection
+
+    let turnOnLoading = this.props.turnOnLoading.bind(this);
+    let unsubscribeFromFeed = this.props.unsubscribeFromFeed.bind(this);
+    let requestCollections = this.props.requestCollections.bind(this);
+    let turnOffLoading = this.props.turnOffLoading.bind(this);
+    let receiveErrors = this.props.receiveErrors.bind(this);
+    if (this.state.selectedSources.length > 0) {
+      let feedIdsToDelete = this.state.selectedSources;
+
+      // Iterate through all selected feeds, then for each feed, iterate
+      // through collectionIds to remove each subscription (since each feed can
+      // be associated with multiple collections by the same user.)
+
+      feedIdsToDelete.forEach( (feedId) => {
+        this.props.feedObjects[feedId].collectionIds.forEach( (collectionId) => {
+          turnOnLoading();
+          unsubscribeFromFeed(collectionId, feedId)
+            .then( (res) => requestCollections())
+            .then( (res) => {
+              turnOffLoading();
+              this.setState({
+                selectedSources: []
+              });
+            });
+        });
+      });
+    }
   }
 
   renderSources() {
@@ -98,6 +119,7 @@ class OrganizeSources extends React.Component {
       "organize-sources-sidebar-open" :
       "organize-sources-sidebar-closed";
   }
+
   render() {
     if (this.props.loading) {
       return (

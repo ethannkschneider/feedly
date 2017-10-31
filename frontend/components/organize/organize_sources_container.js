@@ -1,17 +1,22 @@
 import { connect } from 'react-redux';
 import OrganizeSources from './organize_sources';
+import { turnOffLoading, turnOnLoading } from '../../actions/ui_actions';
 import {
   requestCollections, requestCollection,
   createCollection, deleteCollection,
-  receiveErrors, clearErrors } from '../../actions/collection_actions';
-import { turnOffLoading, turnOnLoading } from '../../actions/ui_actions';
+  receiveErrors, clearErrors
+} from '../../actions/collection_actions';
+
+import {
+  subscribeToFeed,
+  unsubscribeFromFeed
+} from '../../actions/feed_actions';
 
 const mapStateToProps = (state) => {
-  // Maybe change the loading slice of state to be general and not
-  // specific to components?
   return {
     collections: Object.values(state.entities.collections),
     feeds: Object.values(state.entities.feeds),
+    feedObjects: state.entities.feeds,
     loading: state.ui.organizeSources,
     sidebarVisible: state.ui.showSidebar
   };
@@ -23,7 +28,10 @@ const mapDispatchToProps = (dispatch) => {
     turnOnLoading: () => dispatch(turnOnLoading('organizeSources')),
     requestCollections: () => dispatch(requestCollections()),
     deleteCollection: (collectionId) => dispatch(deleteCollection(collectionId)),
-    createCollection: (collection) => dispatch(createCollection(collection))
+    createCollection: (collection) => dispatch(createCollection(collection)),
+    subscribeToFeed: (colId, feedId) => dispatch(subscribeToFeed(colId, feedId)),
+    unsubscribeFromFeed: (colId, feedId) => dispatch(unsubscribeFromFeed(colId, feedId)),
+    receiveErrors: (errors) => dispatch(receiveErrors(errors))
   };
 };
 
