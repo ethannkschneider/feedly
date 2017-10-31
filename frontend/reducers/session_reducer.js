@@ -16,23 +16,18 @@ const SessionReducer = (state = defaultState, action) => {
     case RECEIVE_COLLECTIONS:
       let feedIds = [];
       let feedsById = {};
-      debugger
       Object.values(action.collections).forEach( (collection) => {
-        debugger
         collection.feedIds.forEach( (feedId) => {
           feedIds.push(feedId);
           feedsById[feedId] = true;
         });
       });
-      debugger
       let newCurrentUser = Object.assign(
         {},
         state.currentUser,
         { feed_ids: feedIds, feeds_by_id: feedsById }
       );
-      debugger
       newState = Object.assign({}, state, { currentUser: newCurrentUser });
-      debugger
       return newState;
     // case REMOVE_FEED_FROM_COLLECTION:
       // dup the current user's feed ids:
