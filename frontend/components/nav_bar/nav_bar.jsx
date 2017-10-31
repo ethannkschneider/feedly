@@ -36,6 +36,14 @@ class NavBar extends React.Component {
           <div className="welcome-greeting">
             <h1>Hello, {this.props.currentUser.first_name}</h1>
           </div>
+          <div className="welcome-greeting-add-feeds-link">
+            <button>
+              <Link
+                to="/discover">
+                Add Feeds
+              </Link>
+            </button>
+          </div>
           <form onSubmit={this.handleLogout}>
             <button>Logout</button>
           </form>

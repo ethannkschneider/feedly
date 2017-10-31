@@ -8,6 +8,7 @@ import merge from 'lodash/merge';
 const defaultState = {
   collectionsIndex: false,
   organizeSources: false,
+  discoverSources: false,
   showSidebar: false
 };
 

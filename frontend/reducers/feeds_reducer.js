@@ -3,6 +3,7 @@ import {
   RECEIVE_COLLECTION,
   REMOVE_COLLECTION
 } from '../actions/collection_actions';
+import { REMOVE_FEED, RECEIVE_FEED } from '../actions/feed_actions';
 import merge from 'lodash/merge';
 
 const FeedsReducer = (state = {}, action) => {
@@ -51,6 +52,10 @@ const FeedsReducer = (state = {}, action) => {
     //     delete newState[feedId];
     //   });
     //   return newState;
+    case REMOVE_FEED:
+      newState = merge({}, state);
+      delete newState[action.feedId];
+      return newState;
     default:
       return state;
   }

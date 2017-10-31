@@ -4,4 +4,8 @@ class Api::FeedsController < ApplicationController
     @feed = current_user.feeds.find(params[:id])
     render json: @feed.title
   end
+
+  def index
+    @feeds = Feed.all
+  end
 end

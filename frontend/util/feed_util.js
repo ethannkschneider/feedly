@@ -20,3 +20,9 @@ export const unsubscribeFromFeed = (collectionId, feedId) => {
     }}
   });
 };
+
+// export const fetchFeeds = () => {
+//   return $.ajax({
+//     url: ''
+//   });
+// };

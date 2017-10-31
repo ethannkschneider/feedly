@@ -9,6 +9,7 @@ import SidebarContainer from './sidebar/sidebar_container';
 import WelcomePageContainer from './welcome/welcome_page_container';
 import CollectionIndexContainer from './collections/collection_index_container';
 import OrganizeSourcesContainer from './organize/organize_sources_container';
+import DiscoverSourcesContainer from './discover/discover_sources_container';
 
 class App extends React.Component {
   constructor() {
@@ -34,6 +35,10 @@ class App extends React.Component {
           <ProtectedRoute
             path="/organize"
             component={OrganizeSourcesContainer}
+          />
+          <ProtectedRoute
+            path="/discover"
+            component={DiscoverSourcesContainer}
           />
           <ProtectedRoute
             path="/"

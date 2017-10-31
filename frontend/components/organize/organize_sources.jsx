@@ -73,12 +73,6 @@ class OrganizeSources extends React.Component {
   }
 
   handleUnfollowSources() {
-
-    let turnOnLoading = this.props.turnOnLoading.bind(this);
-    let unsubscribeFromFeed = this.props.unsubscribeFromFeed.bind(this);
-    let requestCollections = this.props.requestCollections.bind(this);
-    let turnOffLoading = this.props.turnOffLoading.bind(this);
-    let receiveErrors = this.props.receiveErrors.bind(this);
     if (this.state.selectedSources.length > 0) {
       let feedIdsToDelete = this.state.selectedSources;
 
@@ -88,11 +82,11 @@ class OrganizeSources extends React.Component {
 
       feedIdsToDelete.forEach( (feedId) => {
         this.props.feedObjects[feedId].collectionIds.forEach( (collectionId) => {
-          turnOnLoading();
-          unsubscribeFromFeed(collectionId, feedId)
-            .then( (res) => requestCollections())
+          this.props.turnOnLoading();
+          this.props.unsubscribeFromFeed(collectionId, feedId)
+            .then( (res) => this.props.requestCollections())
             .then( (res) => {
-              turnOffLoading();
+              this.props.turnOffLoading();
               this.setState({
                 selectedSources: []
               });
