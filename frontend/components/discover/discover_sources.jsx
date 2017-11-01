@@ -66,37 +66,35 @@ class DiscoverSources extends React.Component {
   }
 
   render() {
-    if (this.props.loading) {
-      return (
-        <div className="discover-sources-spinner">
-          <LoadingSpinner />
-        </div>
-      );
-    } else {
-      return(
-        <div className={this.cssClassDiscoverWrapper()}>
-          <div className="discover-wrapper">
-            <h1 className="discover-header">
-              What sources do you want to follow?
-            </h1>
-            <div>
-              <input
-                autoFocus
-                onFocus={this.moveCursorToEnd}
-                type="text"
-                onChange={this.linkInputToState}
-                value={this.state.searchText}
-                />
-            </div>
-            <div className="search-results-table-header">Results</div>
-            <div className="search-results-table">
-              {this.renderSearchRows()}
-            </div>
+    return(
+      <div className={this.cssClassDiscoverWrapper()}>
+        <div className="discover-wrapper">
+          <h1 className="discover-header">
+            What sources do you want to follow?
+          </h1>
+          <div>
+            <input
+              autoFocus
+              onFocus={this.moveCursorToEnd}
+              type="text"
+              onChange={this.linkInputToState}
+              value={this.state.searchText}
+              />
           </div>
-        </div>
-      );
-    }
+          <div className="search-results-table-header">Results</div>
+          {this.props.loading ?
+          <div className="discover-sources-spinner">
+            <LoadingSpinner />
+          </div> :
+          <div className="search-results-table">
+            {this.renderSearchRows()}
+          </div>
+        }
+      </div>
+    </div>
+    );
   }
 }
+
 
 export default DiscoverSources;
