@@ -69,17 +69,21 @@ class DiscoverSources extends React.Component {
     return(
       <div className={this.cssClassDiscoverWrapper()}>
         <div className="discover-wrapper">
-          <h1 className="discover-header">
-            What sources do you want to follow?
-          </h1>
-          <div>
+          <div className="discover-header-wrapper">
+            <h1 className="discover-header">
+              What sources do you want to follow?
+            </h1>
+          </div>
+          <div className="discover-search-input-wrapper">
             <input
+              id="discover-search-input"
               autoFocus
               onFocus={this.moveCursorToEnd}
               type="text"
               onChange={this.linkInputToState}
               value={this.state.searchText}
               />
+            <i class="material-icons">search</i>
           </div>
           <div className="search-results-table-header">Results</div>
           {this.props.loading ?
