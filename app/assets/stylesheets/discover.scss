@@ -25,7 +25,6 @@
   flex-direction: column;
   align-items: center;
   justify-content: flex-start;
-  background-color: lightblue;
   min-height: 500px;
   width: 70%;
 }
@@ -75,6 +74,107 @@
   z-index: 9999;
 }
 
+.search-results-table-header {
+  width: 100%;
+
+}
+
+h1.discover-search-results-header {
+  text-align: left;
+  color: #757575;
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  font-weight: bold;
+  line-height: 1em;
+  margin-bottom: 1.5rem;
+  margin-top: 2.5rem;
+  margin-left: 20px;
+}
+
 .search-results-table {
-  background-color: purple;
+  width: 100%;
+  padding-left: 30px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+}
+
+.discover-feed-row {
+  display: flex;
+  justify-content: space-between;
+  max-width: 624px;
+  min-height: 60px;
+  align-items: center;
+}
+
+.discover-feed-row-image-title-wrapper {
+  display: flex;
+  align-items: center;
+}
+
+.discover-feed-row-image {
+  display: flex;
+  align-items: center;
+  height: 22px;
+  width: 22px;
+  margin-right: 10px;
+}
+
+.discover-feed-row-title {
+  color: #333;
+  font-size: 1rem;
+  font-weight: bold;
+  line-height: 1.25;
+  display: flex;
+  align-items: center;
+}
+
+.discover-feed-is-followed, .discover-feed-is-not-followed {
+  display: flex;
+  align-items: center;
+  height: 24px;
+  font-weight: 700;
+  font-size: 11px;
+  line-height: 1rem;
+  padding: 4px 7px 2px 7px;
+  border-radius: 3px;
+  min-width: 50px;
+  text-transform: uppercase;
+  cursor: pointer;
+}
+
+.discover-feed-is-followed {
+  color: #757575;
+  border: 1px solid #757575;
+}
+
+.discover-feed-is-followed .edit-not-follow {
+  display: none;
+}
+
+.discover-feed-is-followed:hover {
+  color: #636363;
+  border: 1px solid #636363;
+}
+
+.discover-feed-is-followed:hover .edit-not-follow {
+  display: block;
+}
+
+.discover-feed-is-followed:hover .follow-not-edit {
+  display: none;
+}
+
+.discover-feed-is-not-followed {
+  color: #2bb24c;
+  border: 1px solid #2bb24c;
+}
+
+.discover-feed-is-not-followed .edit-not-follow {
+  display: none;
+}
+
+.discover-feed-is-not-followed:hover {
+  color: #00A52A;
+  border: 1px solid #00A52A;
 }

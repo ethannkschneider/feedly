@@ -17,27 +17,34 @@ class DiscoverSourcesIndexItem extends React.Component {
 
   renderFollowedStatus() {
     return this.props.isFollowed ?
-      "Following" : "Follow?";
+      "Following" : "Follow";
   }
 
   handleClick() {
-    
+
   }
 
   render() {
     let feed = this.props.feed;
     return (
       <div className="discover-feed-row">
-        <div className="discover-feed-row-image">
-          <img src={feed.image_url} />
-        </div>
-        <div className="discover-feed-row-title">
-          {feed.title}
+        <div className="discover-feed-row-image-title-wrapper">
+          <div className="discover-feed-row-image">
+            <img src={feed.image_url} />
+          </div>
+          <div className="discover-feed-row-title">
+            {feed.title}
+          </div>
         </div>
         <div
           onClick={this.handeClick}
           className={this.cssFollowedStatus()}>
-          {this.renderFollowedStatus()}
+          <div className="follow-not-edit">
+            {this.renderFollowedStatus()}
+          </div>
+          <div className="edit-not-follow">
+            unfollow
+          </div>
         </div>
       </div>
     );

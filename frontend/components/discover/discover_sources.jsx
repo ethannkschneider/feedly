@@ -85,7 +85,9 @@ class DiscoverSources extends React.Component {
               />
             <i class="material-icons">search</i>
           </div>
-          <div className="search-results-table-header">Results</div>
+          <div className="search-results-table-header">
+            <h1 className="discover-search-results-header">Results</h1>
+          </div>
           {this.props.loading ?
           <div className="discover-sources-spinner">
             <LoadingSpinner />
