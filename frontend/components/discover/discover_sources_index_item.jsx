@@ -1,5 +1,5 @@
 import React from 'react';
-
+import * as FeedUtil from '../../util/feed_util';
 class DiscoverSourcesIndexItem extends React.Component {
 
   constructor(props) {
@@ -20,8 +20,13 @@ class DiscoverSourcesIndexItem extends React.Component {
       "Following" : "Follow";
   }
 
-  handleClick() {
-
+  handleClick(e) {
+    if (this.props.isFollowed) {
+      this.props.turnOnLoading();
+      FeedUtil.unfollowFeeds([this.props.feed.id])
+        .then( (res) => this.props.requestCollections())
+        .then( (res) => this.props.turnOffLoading());
+    }
   }
 
   render() {
@@ -37,7 +42,7 @@ class DiscoverSourcesIndexItem extends React.Component {
           </div>
         </div>
         <div
-          onClick={this.handeClick}
+          onClick={this.handleClick}
           className={this.cssFollowedStatus()}>
           <div className="follow-not-edit">
             {this.renderFollowedStatus()}
