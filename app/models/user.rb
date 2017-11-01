@@ -17,6 +17,9 @@ class User < ApplicationRecord
   validates :email, :session_token, uniqueness: true
   validates :password, length: { minimum: 6, allow_nil: true }
 
+  has_attached_file :image, default_url: "silver-octopus.png"
+  validates_attachment_content_type :image, content_type: /\Aimage\/.*\Z/
+
   after_initialize :ensure_session_token
 
   has_many :collections
@@ -32,7 +35,7 @@ class User < ApplicationRecord
   has_many :subscriptions,
     through: :collections,
     source: :subscriptions
-    
+
   attr_reader :password
 
   def self.generate_session_token

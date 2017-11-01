@@ -1,3 +1,6 @@
+// Input focus cursor reference:
+// https://coderwall.com/p/0iz_zq/how-to-put-focus-at-the-end-of-an-input-with-react-js
+
 import React from 'react';
 import * as FeedUtil from '../../util/feed_util';
 import Dropdown from 'react-dropdown';

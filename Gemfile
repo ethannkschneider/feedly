@@ -40,7 +40,9 @@ gem "nokogiri"
 gem 'faker'
 # for sanitizing html fragments in feed content
 gem 'sanitize'
-
+gem 'paperclip', '~> 5.0.0'
+gem 'figaro'
+gem 'aws-sdk', '< 3.0'
 
 
 group :development, :test do
