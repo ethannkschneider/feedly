@@ -50,7 +50,8 @@ class ArticleShowItem extends React.Component {
         </div>
         <div className="expanded-article-show-visit-website">
           {this.props.article.url ?
-            <button>Visit Website</button> : ""
+            <a href={this.props.article.url} target="_blank"><button>
+              Visit Website</button></a> : ""
           }
         </div>
       </div>
