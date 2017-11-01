@@ -1,23 +1,14 @@
 import React from 'react';
 import * as FeedUtil from '../../util/feed_util';
+import Dropdown from 'react-dropdown';
+
 class DiscoverSourcesIndexItem extends React.Component {
 
   constructor(props) {
     super(props);
 
-    this.renderFollowedStatus = this.renderFollowedStatus.bind(this);
-    this.cssFollowedStatus = this.cssFollowedStatus.bind(this);
     this.handleClick = this.handleClick.bind(this);
-  }
-
-  cssFollowedStatus() {
-    return this.props.isFollowed ?
-      "discover-feed-is-followed" : "discover-feed-is-not-followed";
-  }
-
-  renderFollowedStatus() {
-    return this.props.isFollowed ?
-      "Following" : "Follow";
+    this.handleAddToCollection = this.handleAddToCollection.bind(this);
   }
 
   handleClick(e) {
@@ -29,8 +20,21 @@ class DiscoverSourcesIndexItem extends React.Component {
     }
   }
 
+  handleAddToCollection(e) {
+    this.props.turnOnLoading();
+    FeedUtil.subscribeToFeed(e.value, this.props.feed.id)
+    .then( (res) => this.props.requestCollections())
+    .then( (res) => this.props.turnOffLoading());
+  }
+
   render() {
     let feed = this.props.feed;
+    let dropdownOptions = this.props.collections.map( (collection) => {
+      return {
+        value: collection.id,
+        label: collection.name
+      };
+    });
     return (
       <div className="discover-feed-row">
         <div className="discover-feed-row-image-title-wrapper">
@@ -41,15 +45,27 @@ class DiscoverSourcesIndexItem extends React.Component {
             {feed.title}
           </div>
         </div>
-        <div
-          onClick={this.handleClick}
-          className={this.cssFollowedStatus()}>
-          <div className="follow-not-edit">
-            {this.renderFollowedStatus()}
+        <div className="follow-unfollow-button">
+        {this.props.isFollowed ?
+          <div
+            onClick={this.handleClick}
+            className="discover-feed-is-followed"
+          >
+            <div className="no-hover">Following</div>
+            <div className="yes-hover">Unfollow</div>
+          </div> :
+
+          <div
+            className="edit-not-follow"
+          >
+          <Dropdown
+            options={dropdownOptions}
+            onChange={this.handleAddToCollection}
+            value={null}
+            placeholder="Follow"
+            />
           </div>
-          <div className="edit-not-follow">
-            unfollow
-          </div>
+        }
         </div>
       </div>
     );

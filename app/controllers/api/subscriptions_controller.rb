@@ -2,10 +2,9 @@ class Api::SubscriptionsController < ApplicationController
 
   def create
     @subscription = Subscription.new(subscription_params)
-
     if @subscription.save
-      @collections = current_user.collections.includes(:feeds, :articles)
-      render 'api/collections/index'
+      # @collections = current_user.collections.includes(:feeds, :articles)
+      render json: ["Successfully subscribed!"], status: 200
     else
       render json: @subscription.errors.full_messages, status: 422
     end

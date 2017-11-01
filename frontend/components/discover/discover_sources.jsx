@@ -1,6 +1,5 @@
 import React from 'react';
 import LoadingSpinner from '../loading_spinner';
-import Dropdown from 'react-dropdown';
 import DiscoverSourcesIndexItem from './discover_sources_index_item';
 import * as FeedUtil from '../../util/feed_util';
 
@@ -57,6 +56,7 @@ class DiscoverSources extends React.Component {
           turnOnLoading={this.props.turnOnLoading}
           turnOffLoading={this.props.turnOffLoading}
           requestCollections={this.props.requestCollections}
+          collections={this.props.collections}
         />
       );
     });

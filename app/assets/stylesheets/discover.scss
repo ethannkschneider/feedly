@@ -25,8 +25,9 @@
   flex-direction: column;
   align-items: center;
   justify-content: flex-start;
-  min-height: 500px;
+  height: auto;
   width: 70%;
+  margin-bottom: 50px;
 }
 
 .discover-header-wrapper {
@@ -71,7 +72,7 @@
   left: 247px;
   font-size: 26px;
   color: rgb(51, 51, 51);
-  z-index: 9999;
+
 }
 
 .search-results-table-header {
@@ -148,33 +149,60 @@ h1.discover-search-results-header {
   border: 1px solid #757575;
 }
 
-.discover-feed-is-followed .edit-not-follow {
-  display: none;
-}
 
 .discover-feed-is-followed:hover {
   color: #636363;
   border: 1px solid #636363;
 }
 
-.discover-feed-is-followed:hover .edit-not-follow {
+.discover-feed-is-followed .yes-hover {
+  display: none;
+}
+
+.discover-feed-is-followed:hover .yes-hover {
   display: block;
 }
 
-.discover-feed-is-followed:hover .follow-not-edit {
+.discover-feed-is-followed:hover .no-hover {
   display: none;
 }
 
-.discover-feed-is-not-followed {
-  color: #2bb24c;
+.follow-unfollow-button {
+  position: relative;
+  min-width: 84px;
+}
+
+.edit-not-follow .Dropdown-placeholder {
   border: 1px solid #2bb24c;
+  color: #2bb24c;
 }
 
-.discover-feed-is-not-followed .edit-not-follow {
-  display: none;
+.edit-not-follow .Dropdown-placeholder:hover {
+  border: 1px solid #13772D;
+  color: #13772D;
 }
 
-.discover-feed-is-not-followed:hover {
-  color: #00A52A;
-  border: 1px solid #00A52A;
+.edit-not-follow .Dropdown-root.is-open .Dropdown-menu {
+  position: absolute;
+  top: 10px;
+  left: 150px;
+  z-index: 9999;
+  width: 100%;
+}
+
+.edit-not-follow .Dropdown-option {
+  background-color: whitesmoke;
+}
+
+.edit-not-follow .Dropdown-option:hover {
+  background-color: #d2e4ad;
+}
+
+.edit-not-follow .Dropdown-menu {
+  border-top: 1px solid rgba(0, 0, 0, 0.17);
+  border-radius: 4px;
+}
+
+.discover-feed-row:last-of-type {
+  margin-bottom: 200px;
 }

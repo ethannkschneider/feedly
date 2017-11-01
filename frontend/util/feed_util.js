@@ -10,17 +10,6 @@ export const subscribeToFeed = (collectionId, feedId) => {
   });
 };
 
-export const unsubscribeFromFeed = (collectionId, feedId) => {
-  return $.ajax({
-    url: `api/collections/${collectionId}/unsubscribe`,
-    method: 'post',
-    data: { subscription: {
-      collection_id: collectionId,
-      feed_id: feedId
-    }}
-  });
-};
-
 export const unfollowFeeds = (feedIds) => {
   return $.ajax({
     url: `api/feeds/unfollow`,
@@ -34,5 +23,19 @@ export const fetchFeeds = (searchText) => {
     url: 'api/feeds',
     method: 'get',
     data: { feeds: { searchText } }
+  });
+};
+
+
+
+// NOT CURRENTLY USED -- IMPLEMENT LATER?
+export const unsubscribeFromFeed = (collectionId, feedId) => {
+  return $.ajax({
+    url: `api/collections/${collectionId}/unsubscribe`,
+    method: 'post',
+    data: { subscription: {
+      collection_id: collectionId,
+      feed_id: feedId
+    }}
   });
 };
