@@ -9,8 +9,9 @@ import {
 
 import {
   subscribeToFeed,
-  unsubscribeFromFeed, unfollowFeeds
+  unsubscribeFromFeed
 } from '../../actions/feed_actions';
+import * as FeedUtil from '../../util/feed_util';
 
 const mapStateToProps = (state) => {
   return {
@@ -32,7 +33,7 @@ const mapDispatchToProps = (dispatch) => {
     subscribeToFeed: (colId, feedId) => dispatch(subscribeToFeed(colId, feedId)),
     unsubscribeFromFeed: (colId, feedId) => dispatch(unsubscribeFromFeed(colId, feedId)),
     receiveErrors: (errors) => dispatch(receiveErrors(errors)),
-    unfollowFeeds: (feedIds) => unfollowFeeds(feedIds)
+    unfollowFeeds: (feedIds) => FeedUtil.unfollowFeeds(feedIds)
   };
 };
 

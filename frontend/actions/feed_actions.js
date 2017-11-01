@@ -30,7 +30,3 @@ export const unsubscribeFromFeed = (collectionId, feedId) => (dispatch) => {
     .then( (res) => dispatch(removeFeedFromCollection(res.feed, res.collection)),
       (errors) => dispatch(receiveErrors(errors)));
 };
-
-export const unfollowFeeds = (feedIds) => {
-  return FeedUtil.unfollowFeeds(feedIds);
-};

@@ -1,0 +1,38 @@
+.discover-sidebar-open, .discover-sidebar-closed {
+  background: #FCF5F5;
+  height: auto;
+  margin: 0 auto;
+  position: absolute;
+  top: 57px;
+  right: 0;
+  bottom: 0;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.discover-sidebar-open {
+  left: 268px;
+}
+
+.discover-sidebar-closed {
+  left: 60px;
+}
+
+.discover-wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  background-color: lightblue;
+  height: auto;
+}
+
+.search-results-table-header {
+  background-color: blue;
+}
+
+.search-results-table {
+  background-color: purple;
+}

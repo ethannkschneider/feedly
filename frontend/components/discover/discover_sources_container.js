@@ -17,15 +17,15 @@ const mapStateToProps = (state) => {
     collections: Object.values(state.entities.collections),
     feeds: Object.values(state.entities.feeds),
     loading: state.ui.discoverSources,
-    sidebarVisible: state.ui.showSidebar
+    sidebarVisible: state.ui.showSidebar,
+    followedFeeds: state.session.currentUser.feed_ids
   };
 };
 const mapDispatchToProps = (dispatch) => {
   return {
     turnOffLoading: () => dispatch(turnOffLoading('discoverSources')),
     turnOnLoading: () => dispatch(turnOnLoading('discoverSources')),
-    requestCollections: () => dispatch(requestCollections()),
-
+    requestCollections: () => dispatch(requestCollections())
   };
 };
 

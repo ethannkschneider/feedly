@@ -28,3 +28,11 @@ export const unfollowFeeds = (feedIds) => {
     data: { feeds: { feed_ids: feedIds } }
   });
 };
+
+export const fetchFeeds = (searchText) => {
+  return $.ajax({
+    url: 'api/feeds',
+    method: 'get',
+    data: { feeds: { searchText } }
+  });
+};

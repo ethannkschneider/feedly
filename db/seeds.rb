@@ -28,7 +28,15 @@ FEEDS = {
   'The Ringer' => 'https://www.theringer.com/rss/index.xml',
   'Boston Globe Local' => 'https://www.boston.com/tag/local-news/feed',
   'Boston Globe Politics' => 'https://www.boston.com/tag/politics/feed',
-  'Politico Politics' => 'https://www.politico.com/rss/politics08.xml'
+  'Politico Politics' => 'https://www.politico.com/rss/politics08.xml',
+  'Wired News' => 'https://www.wired.com/feed/rss',
+  'Tech Radar' => 'http://www.techradar.com/rss',
+  'Polygon' => 'https://www.polygon.com/rss/index.xml',
+  'Yahoo News' => 'http://news.yahoo.com/rss/',
+  'CBN World' => 'http://www.cbn.com/cbnnews/world/feed/',
+  'CBN US' => 'http://www.cbn.com/cbnnews/us/feed/',
+  'The Intercept' => 'https://www.theintercept.com/feed/?lang=en',
+  'Github' => 'https://www.github.com/blog.atom'
 }
 
 # User Seeds (Demo user remains the same)

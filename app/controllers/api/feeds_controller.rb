@@ -6,14 +6,14 @@ class Api::FeedsController < ApplicationController
   end
 
   def index
-    @feeds = Feed.all
+    @matchedFeeds = Feed.where('title ILIKE ?', "%#{feeds_params[:searchText]}%")
+    render :index
   end
 
   def unsubscribe_from_current_user_collections
     @feed_subscriptions = current_user.subscriptions.where(feed_id: feeds_params[:feed_ids])
-    
-    if @feed_subscriptions
 
+    if @feed_subscriptions
       @feed_subscriptions.destroy_all
       render json: ["Successfully unsubscribed"], status: 200
     else
@@ -22,6 +22,6 @@ class Api::FeedsController < ApplicationController
   end
 
   def feeds_params
-    params.require(:feeds).permit(feed_ids: [])
+    params.require(:feeds).permit(:searchText, feed_ids: [])
   end
 end

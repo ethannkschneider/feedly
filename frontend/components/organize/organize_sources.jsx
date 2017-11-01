@@ -3,7 +3,7 @@ import LoadingSpinner from '../loading_spinner';
 import OrganizeSourcesIndexItem from'./organize_sources_index_item';
 import merge from 'lodash/merge';
 import Dropdown from 'react-dropdown';
-// import { unfollowFeeds } from '../../actions/feed_actions';
+
 
 class OrganizeSources extends React.Component {
 

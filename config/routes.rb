@@ -6,7 +6,7 @@ Rails.application.routes.draw do
   namespace :api, defaults: {format: :json} do
     resource :session, only: [:create, :destroy]
     resources :users, only: [:create, :show]
-    resources :feeds, only: [:show]
+    resources :feeds, only: [:show, :index]
     post '/feeds/unfollow', to: 'feeds#unsubscribe_from_current_user_collections'
     resources :collections, except: [:new, :edit]
     post '/collections/:id/unsubscribe', to: 'subscriptions#destroy'
