@@ -18,7 +18,9 @@ class SessionForm extends React.Component {
         email: "",
         password: "",
         first_name: "",
-        last_name: ""
+        last_name: "",
+        imageFile: null,
+        imageUrl: null
       };
     }
 
@@ -26,6 +28,7 @@ class SessionForm extends React.Component {
     this.handleSubmit = this.handleSubmit.bind(this);
     this.nameInputs = this.nameInputs.bind(this);
     this.header = this.header.bind(this);
+    this.updateFile = this.updateFile.bind(this);
   }
 
   componentWillReceiveProps(nextProps) {
@@ -58,11 +61,32 @@ class SessionForm extends React.Component {
 
   handleSubmit(e) {
     e.preventDefault();
-    const user = merge({}, this.state);
-    this.props.processForm(user).then( (res) => {
+    // const user = merge({}, this.state);
+    const formData = new FormData();
+    formData.append("user[email]", this.state.email);
+    formData.append("user[password]", this.state.password);
+    if(this.props.formType === 'welcome/signup') {
+      const file = this.state.imageFile;
+      formData.append("user[first_name]", this.state.first_name);
+      formData.append("user[last_name]", this.state.last_name);
+      if (this.state.imageFile) formData.append("user[image]", this.state.imageFile);
+    }
+    this.props.processForm(formData).then( (res) => {
       this.props.hideModals();
       this.props.history.push("/");
     });
+  }
+
+  updateFile(e)  {
+    const file = e.currentTarget.files[0];
+    const fileReader = new FileReader();
+    fileReader.onloadend = function () {
+      this.setState({ imageFile: file, imageUrl: fileReader.result });
+    }.bind(this);
+
+    if (file) {
+      fileReader.readAsDataURL(file);
+    }
   }
 
   nameInputs() {
@@ -85,6 +109,8 @@ class SessionForm extends React.Component {
             onChange={this.update('last_name')}
             value={this.state.last_name}>
           </input>
+          <input type="file" onChange={this.updateFile}/>
+          <img src={this.state.imageUrl}/>
         </div>
       );
     } else {

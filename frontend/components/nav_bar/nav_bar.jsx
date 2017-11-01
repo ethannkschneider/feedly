@@ -36,6 +36,9 @@ class NavBar extends React.Component {
           <div className="welcome-greeting">
             <h1>Hello, {this.props.currentUser.first_name}</h1>
           </div>
+          <div className="profile-pic">
+            <img src={this.props.currentUser.image_url} />
+          </div>
           <div className="welcome-greeting-add-feeds-link">
             <button>
               <Link
