@@ -26,6 +26,7 @@
   font-size: 26px;
   font-weight: bold;
   margin-bottom: 18px;
+  color: #757575;
 }
 
 .session-form form {
@@ -37,10 +38,29 @@
 
 .session-form form div {
   height: inherit;
+  color: #757575;
 }
 
+.session-form form div.name-input {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
 .session-form form label, .session-form form input {
   display: block;
+  text-align: center;
+}
+
+#prof-pic-upload {
+  padding-left: 52px;
+  margin: 20px;
+}
+
+#prof-pic-wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 .hidden-submit {
@@ -53,6 +73,10 @@
   height: 100px;
 }
 
+#pic-preview {
+  height: 70px;
+  width: 70px;
+}
 
 .session-errors ul {
   list-style: none;

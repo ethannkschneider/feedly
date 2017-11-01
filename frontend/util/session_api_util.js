@@ -13,6 +13,9 @@ export const login = (formData) => {
   return $.ajax({
     url: '/api/session',
     method: 'POST',
+    processData: false,
+    contentType: false,
+    dataType: 'json',
     data: formData
   });
 };

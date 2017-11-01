@@ -109,8 +109,16 @@ class SessionForm extends React.Component {
             onChange={this.update('last_name')}
             value={this.state.last_name}>
           </input>
-          <input type="file" onChange={this.updateFile}/>
-          <img src={this.state.imageUrl}/>
+          <div className="prof-pic-upload-wrapper" id="prof-pic-wrapper">
+            <label htmlFor="prof-pic-upload">Upload Profile Picture:</label>
+            <input id="prof-pic-upload" type="file" onChange={this.updateFile}/>
+          </div>
+          <div className="prof-pic-preview">
+            <div>Preview:</div>
+            <div id="pic-preview">
+              <img src={this.state.imageUrl}/>
+            </div>
+          </div>
         </div>
       );
     } else {

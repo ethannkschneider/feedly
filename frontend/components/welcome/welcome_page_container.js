@@ -14,15 +14,15 @@ const mapStateToProps = (state) => {
 };
 
 const mapDispatchToProps = (dispatch) => {
+  const demoFormData = new FormData();
+  demoFormData.append("user[email]", "readly-demo@demo.com");
+  demoFormData.append("user[password]", "password");
   return {
     showSignupModal: () => dispatch(showSignupModal()),
     showLoginModal: () => dispatch(showLoginModal()),
     hideModals: () => dispatch(hideModals()),
     clearErrors: () => dispatch(clearErrors()),
-    demoLogin: () => dispatch(login({
-      email: 'readly-demo@demo.com',
-      password: 'password'
-    }))
+    demoLogin: () => dispatch(login(demoFormData))
   };
 };
 
