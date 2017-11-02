@@ -15,16 +15,15 @@ CATEGORIES = [
   'Design', 'Marketing', 'Literature', 'Culture' ]
 
 FEEDS = {
-  'NYTimes > News' => 'http://rss.nytimes.com/services/xml/rss/nyt/HomePage.xml',
-  'NYTimes > Politics' => 'http://rss.nytimes.com/services/xml/rss/nyt/Politics.xml',
-  'NYTimes > Local' => 'http://rss.nytimes.com/services/xml/rss/nyt/NYRegion.xml',
-  'NYTimes > Business' => 'http://rss.nytimes.com/services/xml/rss/nyt/Business.xml',
-  'NYTimes > Technology' => 'http://rss.nytimes.com/services/xml/rss/nyt/Technology.xml',
-  'NYTimes > Sports' => 'http://rss.nytimes.com/services/xml/rss/nyt/Sports.xml',
-  'NYTimes > Science' => 'http://rss.nytimes.com/services/xml/rss/nyt/Science.xml',
-  'NYTimes > Arts' => 'http://rss.nytimes.com/services/xml/rss/nyt/Arts.xml',
-  'NYTimes > The Stone' => 'http://www.nytimes.com/svc/collections/v1/publish/www.nytimes.com/column/the-stone/rss.xml',
-  'ESPN News' => 'http://www.espn.com/espn/rss/news',
+  'NYTimes News' => 'http://rss.nytimes.com/services/xml/rss/nyt/HomePage.xml',
+  'NYTimes Politics' => 'http://rss.nytimes.com/services/xml/rss/nyt/Politics.xml',
+  'NYTimes Local' => 'http://rss.nytimes.com/services/xml/rss/nyt/NYRegion.xml',
+  'NYTimes Business' => 'http://rss.nytimes.com/services/xml/rss/nyt/Business.xml',
+  'NYTimes Technology' => 'http://rss.nytimes.com/services/xml/rss/nyt/Technology.xml',
+  'NYTimes Sports' => 'http://rss.nytimes.com/services/xml/rss/nyt/Sports.xml',
+  'NYTimes Science' => 'http://rss.nytimes.com/services/xml/rss/nyt/Science.xml',
+  'NYTimes Arts' => 'http://rss.nytimes.com/services/xml/rss/nyt/Arts.xml',
+  'NYTimes The Stone' => 'http://www.nytimes.com/svc/collections/v1/publish/www.nytimes.com/column/the-stone/rss.xml',
   'The Ringer' => 'https://www.theringer.com/rss/index.xml',
   'Boston Globe Local' => 'https://www.boston.com/tag/local-news/feed',
   'Boston Globe Politics' => 'https://www.boston.com/tag/politics/feed',
@@ -37,7 +36,19 @@ FEEDS = {
   'CBN US' => 'http://www.cbn.com/cbnnews/us/feed/',
   'The Intercept' => 'https://www.theintercept.com/feed/?lang=en',
   'Github' => 'https://www.github.com/blog.atom',
-  "Scientific American > Global" => 'http://rss.sciam.com/ScientificAmerican-Global?format=xml'
+  "Scientific American Global" => 'http://rss.sciam.com/ScientificAmerican-Global?format=xml',
+  'BBC News' => 'http://feeds.bbci.co.uk/news/rss.xml',
+  'Science Daily' => 'https://www.sciencedaily.com/rss/matter_energy/engineering.xml',
+  'Boing Boing' => 'https://boingboing.net/feed/atom',
+  'CBS Sports' => 'http://rss.cbssports.com/rss/headlines',
+  'E! Online' => 'http://feeds.feedburner.com/EtsBreakingNews',
+  'Time Magazine' => 'http://feeds2.feedburner.com/time/topstories',
+  'CNN News' => 'http://rss.cnn.com/rss/cnn_topstories.rss',
+  'The Onion' => 'https://www.theonion.com/rss',
+  'Clickhole' => 'http://www.clickhole.com/feeds/rss',
+  'NPR News' => 'http://www.npr.org/rss/rss.php?id=1001',
+  'Reuters' => 'http://feeds.reuters.com/reuters/topNews',
+  'AP Sports' => 'http://hosted.ap.org/lineups/SPORTSHEADS-rss_2.0.xml?SITE=VABRM&SECTION=HOME'
 }
 
 # User Seeds (Demo user remains the same)
@@ -80,14 +91,13 @@ Subscription.destroy_all
 
 Subscription.create!(feed_id: Feed.find_by(title: "NYTimes News").id, collection_id: demo_user.collections.find_by(name: "News").id)
 Subscription.create!(feed_id: Feed.find_by(title: "NYTimes Politics").id, collection_id: demo_user.collections.find_by(name: "Politics").id)
-Subscription.create!(feed_id: Feed.find_by(title: "NYTimes Local").id, collection_id: demo_user.collections.find_by(name: "News").id)
 Subscription.create!(feed_id: Feed.find_by(title: "NYTimes Business").id, collection_id: demo_user.collections.find_by(name: "Business").id)
 Subscription.create!(feed_id: Feed.find_by(title: "NYTimes Technology").id, collection_id: demo_user.collections.find_by(name: "Tech").id)
 Subscription.create!(feed_id: Feed.find_by(title: "NYTimes Sports").id, collection_id: demo_user.collections.find_by(name: "Sports").id)
 Subscription.create!(feed_id: Feed.find_by(title: "NYTimes Science").id, collection_id: demo_user.collections.find_by(name: "Science").id)
 Subscription.create!(feed_id: Feed.find_by(title: "NYTimes Arts").id, collection_id: demo_user.collections.find_by(name: "Arts").id)
 Subscription.create!(feed_id: Feed.find_by(title: "NYTimes The Stone").id, collection_id: demo_user.collections.find_by(name: "Philosophy").id)
-Subscription.create!(feed_id: Feed.find_by(title: "ESPN News").id, collection_id: demo_user.collections.find_by(name: "Sports").id)
+Subscription.create!(feed_id: Feed.find_by(title: "The Onion").id, collection_id: demo_user.collections.find_by(name: "Sports").id)
 Subscription.create!(feed_id: Feed.find_by(title: "The Ringer").id, collection_id: demo_user.collections.find_by(name: "Culture").id)
 Subscription.create!(feed_id: Feed.find_by(title: "Boston Globe Local").id, collection_id: demo_user.collections.find_by(name: "News").id)
 Subscription.create!(feed_id: Feed.find_by(title: "Boston Globe Politics").id, collection_id: demo_user.collections.find_by(name: "Politics").id)

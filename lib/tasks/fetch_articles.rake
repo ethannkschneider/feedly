@@ -5,19 +5,21 @@ require 'sanitize'
 
 task fetch_articles: :environment do
   Feed.all.each do |feed|
+    puts feed.title
     # Make use of 'entries' and 'image_url' methods in the feed model:
     feed.entries.each do |article|
       # Use 'first_or_initialize' in case article already exists in db but has been updated by site
       new_article = feed.articles.where(headline: article.title).first_or_initialize
       new_article_image_url = article.image || feed.image_url
       content = article.content ? Sanitize.fragment(article.content) : nil
+      summary = article.summary ? Sanitize.fragment(article.summary) : nil
       new_article.update_attributes(
         headline: article.title,
         author:  article.author,
         feed_id: feed.id,
         date_published: article.published,
         content: content,
-        summary: article.summary,
+        summary: summary,
         image_url: new_article_image_url,
         url: article.url
       )
