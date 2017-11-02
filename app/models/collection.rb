@@ -24,6 +24,7 @@ class Collection < ApplicationRecord
     source: :feed
 
   has_many :articles,
+    -> {order(date_published: :desc)},
     through: :feeds,
     source: :articles
 

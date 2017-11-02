@@ -170,11 +170,17 @@ h1.discover-search-results-header {
 .follow-unfollow-button {
   position: relative;
   min-width: 84px;
+  max-width: 84px;
 }
 
 .edit-not-follow .Dropdown-placeholder {
   border: 1px solid #2bb24c;
   color: #2bb24c;
+}
+
+.edit-not-follow .Dropdown-root {
+  width: 100%;
+  margin-left: 0;
 }
 
 .edit-not-follow .Dropdown-placeholder:hover {
