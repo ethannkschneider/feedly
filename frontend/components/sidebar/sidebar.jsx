@@ -67,6 +67,10 @@ class Sidebar extends React.Component {
               <Link to="/"><i className="material-icons">
                 rss_feed</i>Today</Link>
             </li>
+            <li className="recently-read-wrapper">
+              <Link to="/recentlyread"><i className="material-icons">
+                history</i>Recently Read</Link>
+            </li>
             <li>
               <Link to="/"><i className="material-icons">
                 bookmark_border</i>Read Later</Link>
@@ -88,6 +92,7 @@ class Sidebar extends React.Component {
             </li>
             {this.renderCollections()}
           </ul>
+
         </div>
       );
       }

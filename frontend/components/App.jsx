@@ -11,6 +11,7 @@ import CollectionIndexContainer from './collections/collection_index_container';
 import OrganizeSourcesContainer from './organize/organize_sources_container';
 import DiscoverSourcesContainer from './discover/discover_sources_container';
 import ArticleIndexContainer from './articles/article_index_container';
+import RecentlyReadContainer from './articles/recently_read_container';
 
 class App extends React.Component {
   constructor() {
@@ -50,8 +51,8 @@ class App extends React.Component {
             component={ArticleIndexContainer}
           />
           <ProtectedRoute
-            path="/feeds/:feedId"
-            component={ArticleIndexContainer}
+            path="/recentlyread"
+            component={RecentlyReadContainer}
           />
           <ProtectedRoute
             path="/"

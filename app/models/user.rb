@@ -40,6 +40,11 @@ class User < ApplicationRecord
     through: :collections,
     source: :subscriptions
 
+  has_many :reads
+  has_many :read_articles,
+    through: :reads,
+    source: :article
+
   attr_reader :password
 
   def self.generate_session_token

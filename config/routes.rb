@@ -10,7 +10,7 @@ Rails.application.routes.draw do
     post '/feeds/unfollow', to: 'feeds#unsubscribe_from_current_user_collections'
     resources :collections, except: [:new, :edit]
     post '/collections/:id/unsubscribe', to: 'subscriptions#destroy'
-    # Should we namespace subscriptions under collections?
     resources :subscriptions, only: [:create]
+    resources :reads, only: [:create, :destroy]
   end
 end

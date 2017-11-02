@@ -23,5 +23,9 @@ class Article < ApplicationRecord
     through: :feed,
     source: :collections
 
+  has_many :reads
+  has_many :user_who_have_read,
+    through: :reads,
+    source: :user
 
 end

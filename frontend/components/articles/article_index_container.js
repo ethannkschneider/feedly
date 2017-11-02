@@ -6,9 +6,6 @@ import { turnOffLoading, turnOnLoading } from '../../actions/ui_actions';
 
 
 const mapStateToProps = (state, ownProps) => {
-  // FIX THIS
-  // WE GET AN ERROR IF WE REFRESH THE ARTICLE INDEX PAGE, BECAUSE THE STATE
-  // WILL BE TEMPORARILY EMPTY, BUT WE AR E TRYING TO CALL METHODS ON IT HERE!
   // formType will determine if we are renderng the collection view or the feed view
   let formType, header, feeds, articles;
   if (Object.keys(state.entities.collections).length > 0) {

@@ -1,11 +1,13 @@
 import { connect } from 'react-redux';
 import ArticleShowItem from './article_show_item';
+import { createRead, deleteRead } from '../../actions/read_actions';
 
 const mapStateToProps = (state, ownProps) => {
   return {
     article: ownProps.article,
     articleFeedName: ownProps.articleFeedName,
-    isBookmarked: ownProps.isBookmarked
+    isBookmarked: ownProps.isBookmarked,
+    isRead: state.session.currentUser.read_article_ids.includes(ownProps.article.id)
   };
 };
 
@@ -16,7 +18,9 @@ const mapDispatchToProps = (dispatch, ownProps) => {
   // if I use a modal for certain show views?)
   return {
     toggleExpand: ownProps.toggleExpand,
-    toggleBookmark: ownProps.toggleBookmark
+    toggleBookmark: ownProps.toggleBookmark,
+    createRead: (articleId) => dispatch(createRead(articleId)),
+    deleteRead: (articleId) => dispatch(deleteRead(articleId))
   };
 };
 

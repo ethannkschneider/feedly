@@ -127,6 +127,22 @@ li.collections-index-article-index-item > div > span {
   border: none;
 }
 
+.mark-as-read {
+  border: 1px solid rgba(0, 0, 0, 0.17);
+  border-radius: 2px;
+  margin-left: 15px;
+  cursor: pointer;
+  font-weight: normal;
+  color: rgb(158, 158, 158);
+  font-size: 12px;
+  line-height: 16px;
+  padding: 5px 10px;
+}
+
+.mark-as-read:hover {
+  color: rgb(100, 100, 100);
+  border: 1px solid rgba(0, 0, 0, 0.35);
+}
 .expanded-article-show-byline button.collections-index-article-index-item-bookmarked i {
   color: green;
 }
