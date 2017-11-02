@@ -15,15 +15,15 @@ CATEGORIES = [
   'Design', 'Marketing', 'Literature', 'Culture' ]
 
 FEEDS = {
-  'NYTimes News' => 'http://rss.nytimes.com/services/xml/rss/nyt/HomePage.xml',
-  'NYTimes Politics' => 'http://rss.nytimes.com/services/xml/rss/nyt/Politics.xml',
-  'NYTimes Local' => 'http://rss.nytimes.com/services/xml/rss/nyt/NYRegion.xml',
-  'NYTimes Business' => 'http://rss.nytimes.com/services/xml/rss/nyt/Business.xml',
-  'NYTimes Technology' => 'http://rss.nytimes.com/services/xml/rss/nyt/Technology.xml',
-  'NYTimes Sports' => 'http://rss.nytimes.com/services/xml/rss/nyt/Sports.xml',
-  'NYTimes Science' => 'http://rss.nytimes.com/services/xml/rss/nyt/Science.xml',
-  'NYTimes Arts' => 'http://rss.nytimes.com/services/xml/rss/nyt/Arts.xml',
-  'NYTimes The Stone' => 'http://www.nytimes.com/svc/collections/v1/publish/www.nytimes.com/column/the-stone/rss.xml',
+  'NYTimes > News' => 'http://rss.nytimes.com/services/xml/rss/nyt/HomePage.xml',
+  'NYTimes > Politics' => 'http://rss.nytimes.com/services/xml/rss/nyt/Politics.xml',
+  'NYTimes > Local' => 'http://rss.nytimes.com/services/xml/rss/nyt/NYRegion.xml',
+  'NYTimes > Business' => 'http://rss.nytimes.com/services/xml/rss/nyt/Business.xml',
+  'NYTimes > Technology' => 'http://rss.nytimes.com/services/xml/rss/nyt/Technology.xml',
+  'NYTimes > Sports' => 'http://rss.nytimes.com/services/xml/rss/nyt/Sports.xml',
+  'NYTimes > Science' => 'http://rss.nytimes.com/services/xml/rss/nyt/Science.xml',
+  'NYTimes > Arts' => 'http://rss.nytimes.com/services/xml/rss/nyt/Arts.xml',
+  'NYTimes > The Stone' => 'http://www.nytimes.com/svc/collections/v1/publish/www.nytimes.com/column/the-stone/rss.xml',
   'ESPN News' => 'http://www.espn.com/espn/rss/news',
   'The Ringer' => 'https://www.theringer.com/rss/index.xml',
   'Boston Globe Local' => 'https://www.boston.com/tag/local-news/feed',
@@ -36,7 +36,8 @@ FEEDS = {
   'CBN World' => 'http://www.cbn.com/cbnnews/world/feed/',
   'CBN US' => 'http://www.cbn.com/cbnnews/us/feed/',
   'The Intercept' => 'https://www.theintercept.com/feed/?lang=en',
-  'Github' => 'https://www.github.com/blog.atom'
+  'Github' => 'https://www.github.com/blog.atom',
+  "Scientific American > Global" => 'http://rss.sciam.com/ScientificAmerican-Global?format=xml'
 }
 
 # User Seeds (Demo user remains the same)

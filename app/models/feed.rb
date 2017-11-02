@@ -42,7 +42,7 @@ class Feed < ApplicationRecord
     # Rubular and google favicons ftw!
     # Stack Overflow Citation: https://stackoverflow.com/questions/5119041/how-can-i-get-a-web-sites-favicon
     if self.url.match(/https?:\/\/.?.?.?\.(.+)\.com/)
-      domain = self.url.match(/https?:\/\/.?.?.?\.(.+)\.com/).captures.first
+      domain = self.url.match(/https?:\/\/.*\.(.+)\.com/).captures.first
       self.image_url = "https://www.google.com/s2/favicons?domain=#{domain}.com"
       self.save!
       self.image_url
