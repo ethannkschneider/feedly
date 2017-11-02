@@ -119,6 +119,10 @@ li.sidebar-category-name, li.feeds-list {
   font-weight: bold;
 }
 
+li.sidebar-category-name {
+  display: flex;
+}
+
 .sidebar-category-name a {
   line-height: 28px;
   height: inherit;

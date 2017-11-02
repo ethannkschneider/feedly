@@ -24,11 +24,13 @@ class SidebarCategoryItem extends React.Component {
   renderFeedTitles() {
     const cssClass = this.state.showFeedsList ?
     "sidebar feeds-list" : "hide-sidebar-feed";
-    return this.props.feeds.map( (feed) => {
+    return this.props.feeds.map( (feed, idx) => {
       return (
-        <li key={feed.id} className={cssClass}>
-          <img src={feed.image_url} className="sidebar-favicon" />
-          {feed.title}
+        <li key={idx} className={cssClass}>
+          <Link to={`/feeds/${feed.id}`}>
+            <img src={feed.image_url} className="sidebar-favicon" />
+            {feed.title}
+          </Link>
         </li>
       );
     });
@@ -43,10 +45,14 @@ class SidebarCategoryItem extends React.Component {
   render() {
     return (
       <div className="sidebar-categories">
-        <li onClick={this.handleClick}
+        <li
           className="sidebar sidebar-category-name">
-          {this.renderArrowIcon()}
-          {this.props.collection.name}
+          <div onClick={this.handleClick}>
+            {this.renderArrowIcon()}
+          </div>
+          <Link to={`/collections/${this.props.collection.id}`}>
+            {this.props.collection.name}
+          </Link>
         </li>
         {this.renderFeedTitles()}
       </div>

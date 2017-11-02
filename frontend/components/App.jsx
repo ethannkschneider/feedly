@@ -10,6 +10,7 @@ import WelcomePageContainer from './welcome/welcome_page_container';
 import CollectionIndexContainer from './collections/collection_index_container';
 import OrganizeSourcesContainer from './organize/organize_sources_container';
 import DiscoverSourcesContainer from './discover/discover_sources_container';
+import ArticleIndexContainer from './articles/article_index_container';
 
 class App extends React.Component {
   constructor() {
@@ -19,7 +20,7 @@ class App extends React.Component {
   render() {
 
     return (
-      <div>
+      <div id="main-page-wrapper">
         <header >
           <NavBarContainer/>
         </header>
@@ -39,6 +40,18 @@ class App extends React.Component {
           <ProtectedRoute
             path="/discover"
             component={DiscoverSourcesContainer}
+          />
+          <ProtectedRoute
+            path="/collections/:collectionId"
+            component={ArticleIndexContainer}
+          />
+          <ProtectedRoute
+            path="/feeds/:feedId"
+            component={ArticleIndexContainer}
+          />
+          <ProtectedRoute
+            path="/feeds/:feedId"
+            component={ArticleIndexContainer}
           />
           <ProtectedRoute
             path="/"

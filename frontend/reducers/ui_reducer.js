@@ -9,6 +9,7 @@ const defaultState = {
   collectionsIndex: false,
   organizeSources: false,
   discoverSources: false,
+  articlesIndex: false,
   showSidebar: false
 };
 
