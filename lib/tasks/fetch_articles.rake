@@ -11,7 +11,11 @@ task fetch_articles: :environment do
     feed.entries.each do |article|
       # Use 'first_or_initialize' in case article already exists in db but has been updated by site
       new_article = feed.articles.where(headline: article.title).first_or_initialize
-      article_best_image = MetaInspector.new(article.url).images.best
+      article_best_image = nil
+      begin
+        article_best_image = MetaInspector.new(article.url).images.best
+      rescue
+      end
       new_article_image_url = article.image || article_best_image || feed.image_url
       content = article.content ? Sanitize.fragment(article.content) : nil
       summary = article.summary ? Sanitize.fragment(article.summary) : nil
