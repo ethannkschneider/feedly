@@ -13,7 +13,6 @@ class DiscoverSources extends React.Component {
     };
 
     this.linkInputToState = this.linkInputToState.bind(this);
-    this.handleAddFeed = this.handleAddFeed.bind(this);
     this.renderSearchRows = this.renderSearchRows.bind(this);
     this.cssClassDiscoverWrapper = this.cssClassDiscoverWrapper.bind(this);
     this.moveCursorToEnd = this.moveCursorToEnd.bind(this);
@@ -39,10 +38,6 @@ class DiscoverSources extends React.Component {
     let end = e.target.value;
     e.target.value = "";
     e.target.value = end;
-  }
-
-  handleAddFeed(e) {
-
   }
 
   renderSearchRows() {
