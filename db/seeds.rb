@@ -31,23 +31,15 @@ FEEDS = {
   'Wired News' => 'https://www.wired.com/feed/rss',
   'Tech Radar' => 'http://www.techradar.com/rss',
   'Polygon' => 'https://www.polygon.com/rss/index.xml',
-  'Yahoo News' => 'http://news.yahoo.com/rss/',
-  'CBN World' => 'http://www.cbn.com/cbnnews/world/feed/',
-  'CBN US' => 'http://www.cbn.com/cbnnews/us/feed/',
   'The Intercept' => 'https://www.theintercept.com/feed/?lang=en',
   'Github' => 'https://www.github.com/blog.atom',
   "Scientific American Global" => 'http://rss.sciam.com/ScientificAmerican-Global?format=xml',
   'BBC News' => 'http://feeds.bbci.co.uk/news/rss.xml',
-  'Science Daily' => 'https://www.sciencedaily.com/rss/matter_energy/engineering.xml',
   'Boing Boing' => 'https://boingboing.net/feed/atom',
   'CBS Sports' => 'http://rss.cbssports.com/rss/headlines',
   'E! Online' => 'http://feeds.feedburner.com/EtsBreakingNews',
   'Time Magazine' => 'http://feeds2.feedburner.com/time/topstories',
-  'CNN News' => 'http://rss.cnn.com/rss/cnn_topstories.rss',
   'The Onion' => 'https://www.theonion.com/rss',
-  'Clickhole' => 'http://www.clickhole.com/feeds/rss',
-  'NPR News' => 'http://www.npr.org/rss/rss.php?id=1001',
-  'Reuters' => 'http://feeds.reuters.com/reuters/topNews',
   'AP Sports' => 'http://hosted.ap.org/lineups/SPORTSHEADS-rss_2.0.xml?SITE=VABRM&SECTION=HOME'
 }
 
