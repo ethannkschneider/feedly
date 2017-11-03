@@ -124,7 +124,7 @@ summary = article.summary ? Sanitize.fragment(article.summary) : nil
 ```
 * On the frontend, articles can be seen as either headline or expanded view
     * Users toggle the view type by clicking on the article:
-    (insert gif here)
+    ![Article views](https://github.com/ethannkschneider/feedly/blob/master/docs/readly-gif-1.gif)
 
 ## Search
 * To add feeds to their collections, users can search through all of feeds stored on the backend
@@ -146,12 +146,13 @@ summary = article.summary ? Sanitize.fragment(article.summary) : nil
 ```javascript
 feeds_by_id: {361: true, 375: true, 394: true}
 ```
+![Organizing sources and searching for feeds](https://github.com/ethannkschneider/feedly/blob/master/docs/readly-gif-3.gif)
 ## Reads
 * After reading an article, users can mark an article as 'read' (or 'unread')
 * When a user 'reads' an article, a new entry is added to the backend Reads table  
     * This is a join table that simply tracks `user_id` and `article_id`
 * Users can view their previously read articles in the Recently Read page on the frontend:
-(insert gif here)
+![Recently read](https://github.com/ethannkschneider/feedly/blob/master/docs/readly-gif-2.gif)
 
 
 ## Future Directions
