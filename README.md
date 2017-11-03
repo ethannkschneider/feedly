@@ -123,8 +123,9 @@ content = article.content ? Sanitize.fragment(article.content) : nil
 summary = article.summary ? Sanitize.fragment(article.summary) : nil
 ```
 * On the frontend, articles can be seen as either headline or expanded view
-    * Users toggle the view type by clicking on the article:
-    ![Article views](https://github.com/ethannkschneider/feedly/blob/master/docs/readly-gif-1.gif)
+    * Users toggle the view type by clicking on the article:  
+
+![Article views](https://github.com/ethannkschneider/feedly/blob/master/docs/readly-gif-1.gif)
 
 ## Search
 * To add feeds to their collections, users can search through all of feeds stored on the backend
