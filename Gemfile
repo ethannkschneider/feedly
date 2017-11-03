@@ -39,7 +39,9 @@ gem "nokogiri"
 # for seeding the database
 gem 'faker'
 # for sanitizing html fragments in feed content
+gem 'metainspector'
 gem 'sanitize'
+# for user uploads
 gem 'paperclip', '~> 5.0.0'
 gem 'figaro'
 gem 'aws-sdk', '< 3.0'

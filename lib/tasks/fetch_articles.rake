@@ -1,4 +1,5 @@
 require 'sanitize'
+require 'metainspector'
 
 # Note: I referenced this sitepoint article:
 # https://www.sitepoint.com/building-an-rss-reader-in-rails-is-easy/
@@ -10,7 +11,8 @@ task fetch_articles: :environment do
     feed.entries.each do |article|
       # Use 'first_or_initialize' in case article already exists in db but has been updated by site
       new_article = feed.articles.where(headline: article.title).first_or_initialize
-      new_article_image_url = article.image || feed.image_url
+      article_best_image = MetaInspector.new(article.url).images.best
+      new_article_image_url = article.image || article_best_image || feed.image_url
       content = article.content ? Sanitize.fragment(article.content) : nil
       summary = article.summary ? Sanitize.fragment(article.summary) : nil
       new_article.update_attributes(
