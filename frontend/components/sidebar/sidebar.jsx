@@ -71,10 +71,6 @@ class Sidebar extends React.Component {
               <Link to="/recentlyread"><i className="material-icons">
                 history</i>Recently Read</Link>
             </li>
-            <li>
-              <Link to="/"><i className="material-icons">
-                bookmark_border</i>Read Later</Link>
-            </li>
           </ul>
 
           <ul className="sidebar sidebar-categories">

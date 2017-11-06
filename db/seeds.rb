@@ -40,7 +40,8 @@ FEEDS = {
   'E! Online' => 'http://feeds.feedburner.com/EtsBreakingNews',
   'Time Magazine' => 'http://feeds2.feedburner.com/time/topstories',
   'The Onion' => 'https://www.theonion.com/rss',
-  'AP Sports' => 'http://hosted.ap.org/lineups/SPORTSHEADS-rss_2.0.xml?SITE=VABRM&SECTION=HOME'
+  'AP Sports' => 'http://hosted.ap.org/lineups/SPORTSHEADS-rss_2.0.xml?SITE=VABRM&SECTION=HOME',
+  'ESPN NEWS' => 'http://www.espn.com/espn/rss/news'
 }
 
 # User Seeds (Demo user remains the same)

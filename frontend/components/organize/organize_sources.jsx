@@ -172,8 +172,7 @@ class OrganizeSources extends React.Component {
                     <div className="organize-sources-source-name">
                       Source Name</div>
                     <div className="organize-sources-buttons">
-                      <div onClick={this.handleReorganizeSources}>
-                        Reorganize</div>
+                      
                       <div onClick={this.handleUnfollowSources}>Unfollow</div>
                     </div>
                   </th>

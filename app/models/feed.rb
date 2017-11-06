@@ -52,6 +52,31 @@ class Feed < ApplicationRecord
     end
   end
 
+  def fetch_articles
+    entries.each do |article|
+      debugger
+      new_article = self.articles.where(headline: article.title).first_or_initialize
+      article_best_image = nil
+      begin
+        article_best_image = MetaInspector.new(article.url).images.best
+      rescue
+      end
+      new_article_image_url = article.image || article_best_image || self.image_url
+      content = article.content ? Sanitize.fragment(article.content) : nil
+      summary = article.summary ? Sanitize.fragment(article.summary) : nil
+      new_article.update_attributes(
+        headline: article.title,
+        author:  article.author,
+        feed_id: self.id,
+        date_published: article.published,
+        content: content,
+        summary: summary,
+        image_url: new_article_image_url,
+        url: self.url
+      )
+    end
+  end
+
   private
 
   def require_image_url

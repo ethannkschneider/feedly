@@ -73,10 +73,12 @@
 #color-feed-image {
   margin-top: 60px;
   display: block;
-  height: 300px;
-  width: 300px;
-  background-image: image-url("rss_logo_blue.png");
+  height: 420px;
+  width: 910px;
+  background-image: image-url("splash_screen_shot.png");
   background-size: cover;
+  background-repeat: no-repeat;
+  box-shadow: 5px 5px 3px #888888;
 }
 
 .welcome-section {

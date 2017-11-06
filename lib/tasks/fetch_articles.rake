@@ -7,6 +7,7 @@ require 'metainspector'
 task fetch_articles: :environment do
   Feed.all.each do |feed|
     puts feed.title
+    debugger
     # Make use of 'entries' and 'image_url' methods in the feed model:
     feed.entries.each do |article|
       # Use 'first_or_initialize' in case article already exists in db but has been updated by site
