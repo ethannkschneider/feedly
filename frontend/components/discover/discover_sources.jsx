@@ -81,7 +81,7 @@ class DiscoverSources extends React.Component {
               onChange={this.linkInputToState}
               value={this.state.searchText}
               />
-            <i className="material-icons">search</i>
+          
           </div>
           <div className="search-results-table-header">
             <h1 className="discover-search-results-header">Results</h1>
