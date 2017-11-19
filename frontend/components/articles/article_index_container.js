@@ -33,7 +33,8 @@ const mapStateToProps = (state, ownProps) => {
     articles,
     sidebarVisible: state.ui.showSidebar,
     loading: state.ui.articlesIndex,
-    feeds: state.entities.feeds
+    feeds: state.entities.feeds,
+    readArticlesById: state.session.currentUser.read_articles_by_id
   };
 };
 

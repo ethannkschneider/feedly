@@ -11,7 +11,7 @@ json.feeds do
       current_user.subscriptions.each do |s|
         collectionIds << s.collection_id if s.feed_id == feed.id
       end
-      json.partial! 'api/feeds/feed', feed: feed, articles: feed.articles,
+      json.partial! 'api/feeds/feed', feed: feed, articles: feed.articles.order(:date_published),
         collectionIds: collectionIds
     end
   end

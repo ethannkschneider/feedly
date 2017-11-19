@@ -6,8 +6,7 @@ import { showLoginModal, hideModals } from '../../actions/modal_actions';
 const mapStateToProps = (state) => {
   return {
     currentUser: state.session.currentUser,
-    loading: state.ui.collectionsIndex || state.ui.discoverSources
-      || state.ui.organizeSources,
+    loading: state.ui.collectionsIndex,
     sidebarVisible: state.ui.showSidebar
   };
 };

@@ -11,20 +11,23 @@ class ArticleIndex extends React.Component {
   }
 
   componentDidMount() {
-    this.props.turnOnLoading();
-    this.props.requestCollections()
-      .then( (res) => this.props.turnOffLoading());
+    if (this.props.articles && this.props.articles.length < 1) {
+      this.props.turnOnLoading();
+      this.props.requestCollections()
+        .then( (res) => this.props.turnOffLoading());
+    }
   }
 
   renderArticles() {
     let feedName;
     if (!this.props.loading && typeof this.props.articles !== 'undefined') {
-      return this.props.articles.map( (article, idx) => {
+      return this.props.articles.slice(0, 25).map( (article, idx) => {
         feedName = this.props.feeds[article.feed_id].title;
         return <ArticleIndexItem
           article={article}
           key={idx}
           feedName={feedName}
+          isRead={this.props.readArticlesById[article.id]}
           />;
       });
     }

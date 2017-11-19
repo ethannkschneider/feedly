@@ -19,9 +19,11 @@ class DiscoverSources extends React.Component {
   }
 
   componentDidMount() {
-    this.props.turnOnLoading();
-    this.props.requestCollections()
-    .then( (res) => this.props.turnOffLoading());
+    if (this.props.collections.length < 1) {
+      this.props.turnOnLoading();
+      this.props.requestCollections()
+      .then( (res) => this.props.turnOffLoading());
+    }
   }
 
   linkInputToState(e) {
@@ -81,7 +83,7 @@ class DiscoverSources extends React.Component {
               onChange={this.linkInputToState}
               value={this.state.searchText}
               />
-          
+
           </div>
           <div className="search-results-table-header">
             <h1 className="discover-search-results-header">Results</h1>

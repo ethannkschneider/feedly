@@ -16,7 +16,7 @@ class CollectionIndexArticleIndex extends React.Component {
     // ** how to order them so that 1) read articles don't show up and
     // ** 2) order is either random or optimized.
     let feeds = this.props.feeds;
-    return this.props.articles.slice(0, 30).map( (article, idx) => {
+    return this.props.articles.slice(0, 12).map( (article, idx) => {
       let articleFeedName = feeds[article.feed_id].title;
       return (
         <CollectionIndexArticleIndexItem

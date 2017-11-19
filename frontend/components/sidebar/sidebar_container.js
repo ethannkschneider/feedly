@@ -8,8 +8,7 @@ const mapStateToProps = (state) => {
     allFeeds: state.entities.feeds,
     feeds: state.session.currentUser.feed_ids.map( (id) => state.entities.feeds[id]),
     feedsById: state.session.currentUser.feeds_by_id,
-    loading: state.ui.collectionsIndex || state.ui.discoverSources
-      || state.ui.organizeSources,
+    loading: state.ui.collectionsIndex,
     sidebarVisible: state.ui.showSidebar
   };
 };

@@ -6,13 +6,21 @@ class ArticleIndexItem extends React.Component {
     super(props);
     this.state = {
       isExpanded: false,
-      isRead: false,
+      isRead: this.props.isRead,
       isBookmarked: false
     };
 
     this.articleSummary = this.articleSummary.bind(this);
     this.toggleExpand = this.toggleExpand.bind(this);
 
+  }
+
+  componentWillReceiveProps(nextProps) {
+    if (nextProps !== this.props) {
+      this.setState({
+        isExpanded: false
+      });
+    }
   }
 
   articleSummary() {
