@@ -3,6 +3,7 @@ import {
   RECEIVE_COLLECTION,
   REMOVE_COLLECTION
 } from '../actions/collection_actions';
+import { RECEIVE_CURRENT_USER } from '../actions/session_actions';
 import merge from 'lodash/merge';
 
 const ArticlesReducer = (state = {}, action) => {
@@ -31,13 +32,9 @@ const ArticlesReducer = (state = {}, action) => {
       articles = action.collection.articles;
       newState = merge({}, state, articles);
       return newState;
-    // case REMOVE_COLLECTION:
-    //   articles = action.collection.articles;
-    //   newState = merge({}, state);
-    //   Object.keys(articles).forEach( (articleId) => {
-    //     delete newState[articleId];
-    //   });
-    //   return newState;
+    case RECEIVE_CURRENT_USER:
+      // clear state upon login/logout
+      return {};
     default:
       return state;
   }

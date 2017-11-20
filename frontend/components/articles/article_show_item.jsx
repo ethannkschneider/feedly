@@ -39,6 +39,9 @@ class ArticleShowItem extends React.Component {
   }
 
   render() {
+    let tempFavStyle = {
+      display: "none"
+    };
     return (
       <div className="expanded-article-show-wrapper">
         <div className="close-article-show-arrow"
@@ -51,7 +54,7 @@ class ArticleShowItem extends React.Component {
           </div>
           <div className="expanded-article-show-byline">
             <h6>{this.props.articleFeedName} by {this.props.article.author}</h6>
-            <button onClick={this.props.toggleBookmark}
+            <button style={tempFavStyle} onClick={this.props.toggleBookmark}
               className={this.cssBookmarkClass()}>
               <i className="material-icons">
                 {this.props.isBookmarked ? "bookmark" : "bookmark_border"}</i>

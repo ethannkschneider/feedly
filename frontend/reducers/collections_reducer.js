@@ -4,6 +4,7 @@ import {
   REMOVE_COLLECTION
 } from '../actions/collection_actions';
 import { REMOVE_FEED_FROM_COLLECTION } from '../actions/feed_actions';
+import { RECEIVE_CURRENT_USER } from '../actions/session_actions';
 import merge from 'lodash/merge';
 
 const CollectionsReducer = (state = {}, action) => {
@@ -34,6 +35,9 @@ const CollectionsReducer = (state = {}, action) => {
       let collectionId = Object.keys(action.collection)[0];
       newState[collectionId] = action.collection;
       return newState;
+    case RECEIVE_CURRENT_USER:
+      // clear state upon login/logout
+      return {};
     default:
       return state;
   }

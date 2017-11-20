@@ -4,6 +4,7 @@ import {
   REMOVE_COLLECTION
 } from '../actions/collection_actions';
 import { REMOVE_FEED_FROM_COLLECTION, RECEIVE_FEED } from '../actions/feed_actions';
+import { RECEIVE_CURRENT_USER } from '../actions/session_actions';
 import merge from 'lodash/merge';
 
 const FeedsReducer = (state = {}, action) => {
@@ -45,18 +46,15 @@ const FeedsReducer = (state = {}, action) => {
       feeds = action.collection.feeds;
       newState = merge({}, state, feeds);
       return newState;
-    // case REMOVE_COLLECTION:
-    //   feeds = action.collectionId.feeds;
-    //   newState = merge({}, state);
-    //   Object.keys(feeds).forEach( (feedId) => {
-    //     delete newState[feedId];
-    //   });
-    //   return newState;
+
     case REMOVE_FEED_FROM_COLLECTION:
       newState = Object.assign({}, state);
       let feedId = Object.keys(action.feed)[0];
       newState[feedId] = action.feed;
       return newState;
+    case RECEIVE_CURRENT_USER:
+      // clear state upon login/logout
+      return {};
     default:
       return state;
   }
