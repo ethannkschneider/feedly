@@ -8,6 +8,7 @@ json.feeds_by_id do
   end
 end
 
+json.read_articles_by_id({})
 json.read_articles_by_id do
   user.read_articles.each do |article|
     json.set! article.id, true

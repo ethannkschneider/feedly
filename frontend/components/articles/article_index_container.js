@@ -34,7 +34,7 @@ const mapStateToProps = (state, ownProps) => {
     sidebarVisible: state.ui.showSidebar,
     loading: state.ui.articlesIndex,
     feeds: state.entities.feeds,
-    readArticlesById: state.session.currentUser.read_articles_by_id
+    readArticlesById: state.session.currentUser.read_article_ids
   };
 };
 

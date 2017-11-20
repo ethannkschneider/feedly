@@ -24,9 +24,11 @@ class OrganizeSources extends React.Component {
   }
 
   componentDidMount() {
-    this.props.turnOnLoading();
-    this.props.requestCollections()
+    if (this.props.collections && this.props.collections.length < 1) {
+      this.props.turnOnLoading();
+      this.props.requestCollections()
       .then( (res) => this.props.turnOffLoading());
+    }
   }
 
   linkInputToState(e) {
@@ -172,7 +174,7 @@ class OrganizeSources extends React.Component {
                     <div className="organize-sources-source-name">
                       Source Name</div>
                     <div className="organize-sources-buttons">
-                      
+
                       <div onClick={this.handleUnfollowSources}>Unfollow</div>
                     </div>
                   </th>

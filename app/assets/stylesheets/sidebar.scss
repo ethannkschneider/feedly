@@ -10,7 +10,7 @@
   overflow: scroll;
   display: flex;
   flex-direction: column;
-  justify-content: flex-start;
+  justify-content: space-between;
   align-items: center;
 }
 
@@ -55,6 +55,10 @@
 .close-sidebar-button button {
   border: none;
   padding-right: 3px;
+}
+
+.sidebar-content {
+  width: 100%;
 }
 
 ul.sidebar-links {
@@ -149,4 +153,17 @@ li.sidebar-category-name i {
 
 li.feeds-list {
   font-weight: normal;
+  font-family: sans-serif;
+}
+
+.es-links {
+  color: rgb(117, 117, 117);
+  margin-bottom: 17px;
+}
+
+.icons {
+  margin-top: 10px;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
 }

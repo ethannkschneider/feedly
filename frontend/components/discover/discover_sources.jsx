@@ -19,7 +19,7 @@ class DiscoverSources extends React.Component {
   }
 
   componentDidMount() {
-    if (this.props.collections.length < 1) {
+    if (this.props.collections && this.props.collections.length < 1) {
       this.props.turnOnLoading();
       this.props.requestCollections()
       .then( (res) => this.props.turnOffLoading());
