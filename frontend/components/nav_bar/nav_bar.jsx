@@ -9,11 +9,13 @@ class NavBar extends React.Component {
     this.cssHeaderClass = this.cssHeaderClass.bind(this);
   }
 
-  handleLogout() {
+  handleLogout(e) {
+    e.preventDefault();
     this.props.logout();
   }
 
-  handleLogin() {
+  handleLogin(e) {
+    e.preventDefault();
     this.props.showLoginModal();
     this.props.history.push("/welcome/login");
   }
