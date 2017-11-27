@@ -25,7 +25,7 @@ class ArticleIndexItem extends React.Component {
 
   articleSummary() {
     // If some articles have nil for summary, we'll try to use their content.
-    return this.props.article.summary || this.props.article.content;
+    return this.props.article.teaser;
   }
 
   toggleExpand(e) {

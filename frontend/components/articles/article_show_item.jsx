@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 class ArticleShowItem extends React.Component {
 
@@ -20,8 +21,9 @@ class ArticleShowItem extends React.Component {
   }
 
   articleSummary() {
-    // If some articles have nil for summary, we'll try to use their content.
-    return this.props.article.summary || this.props.article.content;
+  // If some articles have nil for summary, we'll try to use their content.
+  // the __html object is to allow html tags to get through
+    return this.props.article.summary || { __html: this.props.article.content };
   }
 
   toggleRead() {
@@ -50,10 +52,12 @@ class ArticleShowItem extends React.Component {
         </div>
         <div className="expanded-article-show-header">
           <div className="expanded-article-show-headline">
-            <h1>{this.props.article.headline}</h1>
+            <a href={this.props.article.url} target="_blank"><h1>{this.props.article.headline}</h1></a>
           </div>
           <div className="expanded-article-show-byline">
-            <h6>{this.props.articleFeedName} by {this.props.article.author}</h6>
+            <h6><Link to={`/feeds/${this.props.article.feed_id}`}>
+              <span className="expanded-article-show-feedname">{this.props.articleFeedName}</span></Link>
+                 by {this.props.article.author}</h6>
             <button style={tempFavStyle} onClick={this.props.toggleBookmark}
               className={this.cssBookmarkClass()}>
               <i className="material-icons">
@@ -67,13 +71,22 @@ class ArticleShowItem extends React.Component {
           </div>
         </div>
         <div>
-          <img src={this.props.article.image_url}
-            className="expanded-article-show-image"
-          />
+          { this.props.article.content ? null :
+            <img src={this.props.article.image_url}
+              className="expanded-article-show-image"
+              />
+          }
         </div>
-        <div className="expanded-article-show-summary-content">
-          <p>{this.articleSummary()}</p>
-        </div>
+        {this.props.article.summary ?
+          <div className="expanded-article-show-summary-content">
+            <p>{this.articleSummary()}</p>
+          </div> :
+          <div
+            key={this.props.article.id}
+            dangerouslySetInnerHTML={this.articleSummary()}
+            className="expanded-article-show-summary-content">
+          </div>
+        }
         <div className="expanded-article-show-visit-website">
           {this.props.article.url ?
             <a href={this.props.article.url} target="_blank"><button>

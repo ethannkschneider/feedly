@@ -11,7 +11,8 @@ class ArticleIndex extends React.Component {
   }
 
   componentDidMount() {
-    if (this.props.articles && this.props.articles.length < 1) {
+    if ((this.props.articles && this.props.articles.length) < 1 ||
+      typeof this.props.articles === 'undefined') {
       this.props.turnOnLoading();
       this.props.requestCollections()
         .then( (res) => this.props.turnOffLoading());

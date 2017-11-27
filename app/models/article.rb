@@ -13,6 +13,7 @@
 #  updated_at     :datetime         not null
 #  summary        :text
 #  url            :text
+#  teaser         :string
 #
 
 class Article < ApplicationRecord
