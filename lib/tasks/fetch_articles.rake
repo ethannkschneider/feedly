@@ -55,7 +55,7 @@ task fetch_articles: :environment do
         content = article.content ? Sanitize.fragment(article.content, Sanitize::Config.merge(Sanitize::Config::BASIC,
           :elements        => Sanitize::Config::BASIC[:elements] + ['div', 'table', 'h1', 'h2', 'h3', 'img'],
           :transformers => youtube_transformer,
-          :remove_contents => true
+          :remove_contents => false
         )) : nil
         # REMOVE BELOW IF ABOVE WORKS
         # content = article.content ? Sanitize.fragment(article.content, Sanitize::Config::BASIC) : nil

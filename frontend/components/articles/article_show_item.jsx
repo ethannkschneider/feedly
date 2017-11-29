@@ -71,11 +71,9 @@ class ArticleShowItem extends React.Component {
           </div>
         </div>
         <div>
-          { this.props.article.content ? null :
-            <img src={this.props.article.image_url}
-              className="expanded-article-show-image"
-              />
-          }
+          <img src={this.props.article.image_url}
+            className="expanded-article-show-image"
+          />
         </div>
         {this.props.article.summary ?
           <div className="expanded-article-show-summary-content">

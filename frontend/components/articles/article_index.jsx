@@ -22,7 +22,7 @@ class ArticleIndex extends React.Component {
   renderArticles() {
     let feedName;
     if (!this.props.loading && typeof this.props.articles !== 'undefined') {
-      return this.props.articles.slice(0, 25).map( (article, idx) => {
+      return this.props.articles.slice(0, 10).map( (article, idx) => {
         feedName = this.props.feeds[article.feed_id].title;
         return <ArticleIndexItem
           article={article}
