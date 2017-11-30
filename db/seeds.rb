@@ -92,7 +92,6 @@ Subscription.create!(feed_id: Feed.find_by(title: "NYTimes Sports").id, collecti
 Subscription.create!(feed_id: Feed.find_by(title: "NYTimes Science").id, collection_id: demo_user.collections.find_by(name: "Science").id)
 Subscription.create!(feed_id: Feed.find_by(title: "NYTimes Arts").id, collection_id: demo_user.collections.find_by(name: "Arts").id)
 Subscription.create!(feed_id: Feed.find_by(title: "NYTimes The Stone").id, collection_id: demo_user.collections.find_by(name: "Philosophy").id)
-Subscription.create!(feed_id: Feed.find_by(title: "The Onion").id, collection_id: demo_user.collections.find_by(name: "Sports").id)
 Subscription.create!(feed_id: Feed.find_by(title: "The Ringer").id, collection_id: demo_user.collections.find_by(name: "Culture").id)
 Subscription.create!(feed_id: Feed.find_by(title: "Boston Globe Local").id, collection_id: demo_user.collections.find_by(name: "News").id)
 Subscription.create!(feed_id: Feed.find_by(title: "Boston Globe Politics").id, collection_id: demo_user.collections.find_by(name: "Politics").id)
