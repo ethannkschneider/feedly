@@ -21,6 +21,7 @@ class Api::FeedsController < ApplicationController
     end
   end
 
+
   def feeds_params
     params.require(:feeds).permit(:searchText, feed_ids: [])
   end
