@@ -20,15 +20,15 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 
   // START TEST //
-  window.login = login;
-  window.logout = logout;
-  window.signup = signup;
-  window.fetchCollections = fetchCollections;
-  window.fetchCollection = fetchCollection;
-  window.createCollection = createCollection;
-  window.deleteCollection = deleteCollection;
-  window.getState = store.getState;
-  window.dispatch = store.dispatch;
+  // window.login = login;
+  // window.logout = logout;
+  // window.signup = signup;
+  // window.fetchCollections = fetchCollections;
+  // window.fetchCollection = fetchCollection;
+  // window.createCollection = createCollection;
+  // window.deleteCollection = deleteCollection;
+  // window.getState = store.getState;
+  // window.dispatch = store.dispatch;
   // END TEST //
 
 
