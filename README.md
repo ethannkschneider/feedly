@@ -1,6 +1,6 @@
 # Readly
 
-[Live Demo](www.readly.fun)
+[Live Demo](https://www.readly.fun)
 
 Readly is an RSS feed aggregator modeled after [Feedly](www.feedly.com). Users can subscribe  
 to feeds from their favorite websites and view the most up-to-date content,  
