@@ -2,7 +2,7 @@ class Api::FeedsController < ApplicationController
 
   def show
     @feed = current_user.feeds.find(params[:id])
-    render json: @feed.title
+    render :show
   end
 
   def index

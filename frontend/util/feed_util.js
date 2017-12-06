@@ -26,7 +26,12 @@ export const fetchFeeds = (searchText) => {
   });
 };
 
-export const fetchFeedArticles = (feedId)
+export const fetchFeedArticles = (feedId) => {
+  return $.ajax({
+    url: `api/feeds/${feedId}`,
+    method: 'get'
+  });
+};
 
 
 // // NOT CURRENTLY USED -- IMPLEMENT LATER?

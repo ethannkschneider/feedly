@@ -45,6 +45,7 @@ gem 'sanitize'
 gem 'paperclip', '~> 5.0.0'
 gem 'figaro'
 gem 'aws-sdk', '< 3.0'
+gem 'kaminari'
 
 
 group :development, :test do
