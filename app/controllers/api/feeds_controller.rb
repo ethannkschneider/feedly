@@ -1,7 +1,8 @@
 class Api::FeedsController < ApplicationController
 
   def show
-    @feed = current_user.feeds.find(params[:id])
+    @feed = current_user.feeds.find(params[:id]).includes(:articles)
+    @articles = @feed.articles.order(date_published: :DESC).page(params[:page])
     render :show
   end
 

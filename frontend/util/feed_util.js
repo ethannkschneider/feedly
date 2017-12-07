@@ -26,22 +26,10 @@ export const fetchFeeds = (searchText) => {
   });
 };
 
-export const fetchFeedArticles = (feedId) => {
+export const fetchFeedArticles = (feedId, page) => {
   return $.ajax({
     url: `api/feeds/${feedId}`,
-    method: 'get'
+    method: 'get',
+    data: { page }
   });
 };
-
-
-// // NOT CURRENTLY USED -- IMPLEMENT LATER?
-// export const unsubscribeFromFeed = (collectionId, feedId) => {
-//   return $.ajax({
-//     url: `api/collections/${collectionId}/unsubscribe`,
-//     method: 'post',
-//     data: { subscription: {
-//       collection_id: collectionId,
-//       feed_id: feedId
-//     }}
-//   });
-// };
