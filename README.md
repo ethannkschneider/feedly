@@ -1,5 +1,7 @@
 # Readly
 
+UPDATE: This app is no longer maintained.
+
 [Live Demo](https://www.readly.fun)
 
 Readly is an RSS feed aggregator modeled after [Feedly](www.feedly.com). Users can subscribe  
